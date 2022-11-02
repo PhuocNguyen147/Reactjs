@@ -5,13 +5,13 @@ import * as actions from "../../store/actions";
 
 import './Login.scss'
 import { FormattedMessage } from 'react-intl';
-
+import { handleLoginApi } from '../../services/userService';
 
 
 
 class Login extends Component {
     constructor(props) { /* khai báo các state */
-        super(props);// hàm tạo
+        super(props);   // hàm tạo
         this.state = {
             username: '',
             password: '',
@@ -31,10 +31,11 @@ class Login extends Component {
         })
         console.log(event.target.value)
     }
-    handleLogin = () => {
-        alert('Phuoc b1809281')
+    handleLogin = async () => {
+
         console.log('username: ' + this.state.username, 'pass: ' + this.state.password);
         console.log('all state: ', this.state);
+        await handleLoginApi(this.state.username, this.state.password);
     }
     handleShowPass = () => {
         this.setState({
