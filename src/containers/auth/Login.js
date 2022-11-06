@@ -16,6 +16,7 @@ class Login extends Component {
             username: '',
             password: '',
             isShowPassword: false,
+            errMessage: ''
         }
     }
 
@@ -31,18 +32,51 @@ class Login extends Component {
         })
         console.log(event.target.value)
     }
-    handleLogin = async () => {
+    // handleLogin = async () => {
 
-        console.log('username: ' + this.state.username, 'pass: ' + this.state.password);
-        console.log('all state: ', this.state);
-        await handleLoginApi(this.state.username, this.state.password);
+    //     console.log('username: ' + this.state.username, 'pass: ' + this.state.password);
+    //     console.log('all state: ', this.state);
+    //     try {
+    //         await handleLoginApi(this.state.username, this.state.password);
+
+    //     } catch (e) {
+    //         console.log(e)
+    //     }
+    // }
+    handleLogin = async () => {
+        this.setState({
+            errMessage: ''
+        })
+        try {
+
+            let data = await handleLoginApi(this.state.username, this.state.password);
+            if (data && data.errCode !== 0) {
+                this.setState({
+                    errMessage: data.message
+                })
+            }
+            if (data && data.errCode === 0) {
+                this.props.userLoginSuccess(data.user);
+                console.log('loging success');
+            }
+
+        } catch (e) {
+            if (e.response) {
+                if (e.response.data) {
+                    this.setState({
+                        errMessage: e.response.data.message
+                    })
+                }
+            }
+            console.log('error message', e.response);
+        }
     }
     handleShowPass = () => {
         this.setState({
             isShowPassword: !this.state.isShowPassword
         })
 
-
+        console.log(this.state.showPassword);
 
     }
 
@@ -115,7 +149,7 @@ const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
         adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
-        adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        //adminLoginFail: () => dispatch(actions.adminLoginFail()),
     };
 };
 
