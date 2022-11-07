@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux'; // 
-import { IntlProvider } from "react-intl"; // backit chuyển đổi ngôn ngữ trong dự án
+import { connect } from 'react-redux';
+import { IntlProvider } from "react-intl";
 
 import '@formatjs/intl-pluralrules/polyfill';
 import '@formatjs/intl-pluralrules/locale-data/en';

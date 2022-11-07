@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { push } from "connected-react-router";
+// import * as actions from "../store/actions";
 import * as actions from "../../store/actions";
 
-import './Login.scss'
+import './Login.scss';
 import { FormattedMessage } from 'react-intl';
+// import { userService } from '../../services/userService';
 import { handleLoginApi } from '../../services/userService';
-
 
 
 class Login extends Component {
@@ -32,17 +33,7 @@ class Login extends Component {
         })
         console.log(event.target.value)
     }
-    // handleLogin = async () => {
-
-    //     console.log('username: ' + this.state.username, 'pass: ' + this.state.password);
-    //     console.log('all state: ', this.state);
-    //     try {
-    //         await handleLoginApi(this.state.username, this.state.password);
-
-    //     } catch (e) {
-    //         console.log(e)
-    //     }
-    // }
+  
     handleLogin = async () => {
         this.setState({
             errMessage: ''
@@ -148,9 +139,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         navigate: (path) => dispatch(push(path)),
-        adminLoginSuccess: (adminInfo) => dispatch(actions.adminLoginSuccess(adminInfo)),
-        //adminLoginFail: () => dispatch(actions.adminLoginFail()),
+        // userLoginFail: () => dispatch(actions.adminLoginFail()),
+        userLoginSuccess: (userInfo) => dispatch(actions.userLoginSuccess(userInfo))
     };
+
+
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
