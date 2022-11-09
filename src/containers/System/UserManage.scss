@@ -1,0 +1,41 @@
+.table-bordered {
+    border: 1px solid #ddd !important;
+}
+
+table caption {
+    padding: .5em 0;
+}
+
+@media screen and (max-width: 767px) {
+    table caption {
+        display: none;
+    }
+}
+
+.edit {
+    font-size: large;
+    width: 50px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(40, 84, 231);
+
+    &:hover {
+        background-color: transparent !important;
+        color: rgb(2, 30, 122) !important;
+    }
+}
+
+.delete {
+    font-size: large;
+    width: 50px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgb(233, 21, 91);
+
+    &:hover {
+        background-color: transparent !important;
+        color: rgb(166, 4, 31) !important;
+    }
+}

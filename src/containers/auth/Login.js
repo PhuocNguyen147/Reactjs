@@ -33,10 +33,10 @@ class Login extends Component {
         })
         console.log(event.target.value)
     }
-  
+
     handleLogin = async () => {
         this.setState({
-            errMessage: ''
+            errMessage: '' //clear sau moi lan submit
         })
         try {
 
@@ -105,7 +105,9 @@ class Login extends Component {
 
                             </div>
                         </div>
-
+                        <div className='col-12' style={{ color: 'red' }}>
+                            {this.state.errMessage}
+                        </div>
                         <div className='col-12 '>
                             <button className='btn-login' onClick={() => { this.handleLogin() }}>LOGIN</button>
                         </div>
