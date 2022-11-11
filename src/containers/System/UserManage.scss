@@ -39,3 +39,59 @@ table caption {
         color: rgb(166, 4, 31) !important;
     }
 }
+
+
+.users-container {
+    .mx-3 {
+        .btn {
+            margin-left: 27px;
+        }
+    }
+
+}
+
+
+
+.modalContainer {
+    .modal-content {
+        .modal-header {
+            button {
+                background-color: transparent !important;
+                border: none;
+                color: white;
+                font-size: 30px;
+            }
+
+            background-color: #559b41 !important;
+
+
+        }
+    }
+
+    .modalBody {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+
+
+        .inputContainer {
+            display: flex;
+            flex-direction: column;
+            width: 49%;
+
+            &.address {
+                width: 100%;
+            }
+
+
+            input {
+                border-radius: 6px;
+                height: 30px;
+                border: 1px solid gray;
+                outline: none;
+                padding: 0 5px;
+            }
+        }
+    }
+
+}
