@@ -4,8 +4,10 @@ import { connect } from 'react-redux';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 class ModalUser extends Component {
 
-    constructorq(props) {
+    constructor(props) {
+        super(props);
         this.state = {
+
             email: '',
             password: '',
             firstName: '',
@@ -61,6 +63,7 @@ class ModalUser extends Component {
 
     render() {
 
+
         return (
             <div className="text-center" >
                 <Modal
@@ -80,9 +83,9 @@ class ModalUser extends Component {
                                 <input type="email"
                                     onChange={(event) => { this.handlleOnchangeInput(event, 'email') }}
                                     placeholder='@example.com'
-                                    value={this.sate}
-
                                 />
+
+
                             </div>
                             <div className='inputContainer'>
                                 <label>Password: </label>
