@@ -1,7 +1,13 @@
-.home-header-container {
-    height: 90px;
+body {
+    font-family: 'Jost', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
 
+.home-header-container {
+    height: 140px;
     width: 100%;
+    background-color: rgb(255, 255, 255);
+
 
 
     .home-header-content-top {
@@ -17,8 +23,8 @@
             justify-content: space-between;
 
             .phone {
-                font-weight: 700;
-                font-size: 17px;
+                font-weight: 600;
+                font-size: 15px;
 
                 a {
                     margin-left: 15px;
@@ -42,6 +48,7 @@
                 margin: 0;
                 list-style-type: none;
                 text-align: center;
+                padding: 0 175px;
 
                 .flag {
                     img {
@@ -57,102 +64,151 @@
             }
         }
 
-        .right-content {
+        .right-content-top {
             width: 55%;
+
+            .row {
+
+                display: flex;
+
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+                // margin-top: 10px;
+
+                a {
+                    text-decoration: none;
+
+                    .btn-success {
+                        background: #2eaa2e !important;
+                    }
+                }
+
+                .btn {
+                    background: #1991eb;
+
+                    color: #fff;
+                    font-weight: 600;
+                    width: 100%;
+
+                    i {
+                        margin-right: 6px;
+                    }
+
+                    .far {
+                        font-weight: 400;
+                    }
+
+                    .fa-globe {
+
+                        font-size: 15px;
+                    }
+                }
+
+                .btn-success {
+                    background: #42cb83;
+                    color: #fff;
+                    font-weight: 600;
+                    width: 100%;
+                }
+            }
         }
     }
 
+
+
     .home-header-content-bottom {
         width: 100%;
-        height: 100%;
+        height: 100px;
         display: flex;
-        padding: 0 144px;
+        // padding: 0 144px;
+        // border: 1px solid orange;
 
         .left-content {
-            width: 25%;
+            width: 40%;
             display: flex;
-            border: 1px solid red;
             align-items: center;
+            margin: 0 -30px 0 -42px;
 
             i {
                 font-size: 25px;
+                cursor: pointer;
+                margin: 0 0 0 300px;
             }
+
+
 
             .logo {
                 background: url('../../assets/images/Screenshot\ 2022-11-13\ 161850.png') center center no-repeat;
                 height: 90px;
-                width: 490px;
+                width: 386px;
+
 
 
             }
         }
 
         .center-content {
-            width: 50%;
-            border: 1px solid red;
+            width: 45%;
+            // border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 15px;
+            padding: 0 30px;
+
+            .menu-content {
+                .small-menu {
+                    font-size: 12px;
+                    font-weight: 400;
+                }
+            }
         }
 
-        .right-content {
-            width: 25%;
-            border: 1px solid orange
+        .right-content-search {
+            width: 17%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .search {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 8px 12px;
+                border-radius: 25px;
+                background-color: #e0eadc;
+                outline: none;
+
+
+                i {
+                    padding: 0;
+                }
+
+                input {
+                    height: 30px;
+                    width: 300px;
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                }
+
+            }
+
+
+            // border: 1px solid orange
         }
     }
 }
 
-// .header {
-//     width: 1903px;
-//     position: fixed;
-//     top: 0px;
-//     z-index: 101;
-
-//     .top-header-medicare {
-//         border-bottom: 1px solid rgba(127, 196, 90, .2);
-//         padding: 10px 0;
-//         -webkit-transition: all .4s;
-//         -moz-transition: all .4s;
-//         -ms-transition: all .4s;
-//         -o-transition: all .4s;
-//         transition: all .1s;
+.home-header-banner {
+    background: url(../../assets/images/Banner-Kham-benh-hieu-qua-2048x693.jpg);
+    height: 693px;
+    background-repeat: no-repeat;
+    background-size: covor;
+    background-position: center;
+    filter: drop-shadow(6px 6px 7px black);
 
 
-//         .container {
-//             max-width: 1240px;
-//             width: 100%;
-//             padding-right: 15px;
-//             padding-left: 15px;
-//             margin-right: auto;
-//             margin-left: auto;
-
-//             .row {
-//                 display: -ms-flexbox;
-//                 display: flex;
-//                 -ms-flex-wrap: wrap;
-//                 flex-wrap: wrap;
-//                 margin-right: -15px;
-//                 margin-left: -15px;
-
-//                 .top-left-wrapper {
-//                     align-self: center;
-//                     display: flex;
-//                     justify-content: space-between;
-
-//                     div {
-//                         display: block;
-//                     }
-//                 }
-
-//                 .col-sm-5 {
-//                     -ms-flex: 0 0 41.666667%;
-//                     flex: 0 0 41.666667%;
-//                     max-width: 41.666667%
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// *,
-// *:before,
-// *:after {
-//     box-sizing: border-box;
-// }
+}

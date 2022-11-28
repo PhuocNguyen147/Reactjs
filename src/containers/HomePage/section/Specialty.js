@@ -1,21 +1,16 @@
 import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
-import HomeHeader from './HomeHeader';
-import Specialty from './section/Specialty';
-
-class HomePage extends Component {
+import './Specialty.scss'
+class Specialty extends Component {
 
     render() {
 
 
         return (
-            <div>
-                <HomeHeader />
-                <Specialty />
-
+            <div className='Section'>
+                <div className='specialty-content'></div>
             </div>
-
         );
     }
 
@@ -32,4 +27,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
