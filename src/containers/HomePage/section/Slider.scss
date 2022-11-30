@@ -1,0 +1,24 @@
+.Slider {
+    .carousel {
+        .carousel-inner {
+            .carousel-item {
+                img {
+                    height: 693px;
+                    background-repeat: no-repeat;
+                    // background-size: cover;
+                    background-position: center;
+                    filter: drop-shadow(6px 6px 7px black);
+                    margin-top: 160px;
+                }
+            }
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 6rem !important;
+            height: 6rem !important;
+            border-radius: 50% !important;
+            background-color: rgb(193, 206, 219);
+        }
+    }
+}

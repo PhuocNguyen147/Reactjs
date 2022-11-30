@@ -4,11 +4,16 @@ body {
 }
 
 .home-header-container {
-    height: 140px;
+    height: 150px;
     width: 100%;
     background-color: rgb(255, 255, 255);
 
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 
     .home-header-content-top {
         align-self: center;
@@ -80,7 +85,7 @@ body {
                     text-decoration: none;
 
                     .btn-success {
-                        background: #2eaa2e !important;
+                        background: #0fce6a !important;
                     }
                 }
 
@@ -202,13 +207,13 @@ body {
     }
 }
 
-.home-header-banner {
-    background: url(../../assets/images/Banner-Kham-benh-hieu-qua-2048x693.jpg);
-    height: 693px;
-    background-repeat: no-repeat;
-    background-size: covor;
-    background-position: center;
-    filter: drop-shadow(6px 6px 7px black);
+// .home-header-banner {
+//     background: url(../../assets/images/Banner-Kham-benh-hieu-qua-2048x693.jpg);
+//     height: 693px;
+//     background-repeat: no-repeat;
+//     // background-size: cover;
+//     background-position: center;
+//     filter: drop-shadow(6px 6px 7px black);
+//     margin-top: 160px;
 
-
-}
+// }

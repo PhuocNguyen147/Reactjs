@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import HomeHeader from './HomeHeader';
+import Carousel from './section/Carousel';
+import Slider from './section/Slider';
 import Specialty from './section/Specialty';
 
 class HomePage extends Component {
@@ -12,7 +14,10 @@ class HomePage extends Component {
         return (
             <div>
                 <HomeHeader />
+                <Slider />
+                <Carousel />
                 <Specialty />
+                {/* <div style={{ hight: '1000' }}></div> */}
 
             </div>
 
