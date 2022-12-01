@@ -1,5 +1,8 @@
 .login-background {
-    background: linear-gradient(135deg, rgb(82, 89, 235) 0%, rgb(43, 213, 193) 100%); //deg độ góc
+    // background: #7ba6d2;
+    /* linear-gradient(135deg, rgb(82, 89, 235) 0%, rgb(43, 213, 193) 100%); */
+    //deg độ góc
+    background: url(../../assets/images/mcare-patten-2x.png);
     height: 100vh;
 
     .login-container {

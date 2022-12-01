@@ -1,0 +1,93 @@
+.contact {
+    background-color: #f8e1db;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+
+.contact .left,
+.contact .right {
+    float: left;
+    width: 43%;
+    padding: 20px 60px;
+}
+
+.contact .left {
+    // background: url('Img/mask.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact .right {
+    padding-top: 130px;
+}
+
+.contact .right p {
+    margin: 12px 0 30px;
+}
+
+.contact .right h3 {
+    margin-bottom: 21px;
+}
+
+.contact .right .app,
+.contact .right .us {
+    float: left;
+    width: 50%;
+}
+
+.contact .us i {
+    color: #e76f51;
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.footer {
+    background-color: #def0e2;
+    border-radius: 100px 100px 0 0;
+    padding: 100px 30px;
+    color: #3b3735;
+    height: 400px;
+
+    .footer_content {
+        display: flex;
+    }
+
+    .list {
+        display: flex;
+    }
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 21px;
+}
+
+.about {
+    float: left;
+    width: 35%;
+    line-height: 28px;
+    padding: 0 20px;
+}
+
+.list {
+    float: left;
+    width: 60%;
+    padding: 0 20px;
+}
+
+
+
+.nav li {
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #3b3735;
+}
+
+.copyrights {
+    text-align: center;
+    padding-top: 30px;
+}

@@ -14,59 +14,58 @@ import Session from 'redux-persist/lib/storage/session';
 class Specialty extends Component {
 
     render() {
-        let settings = {
-            dots: false,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1
-        };
+
+
         return (
-            <div className='specialty'>
+            <div className='specialty' >
                 <div className='specialty-container'>
                     <div className='header'>
-                        <span className='title'>Chuyên Khoa Phổ Biến</span>
+                        <span className='title'>Đội Ngũ Bác Sĩ</span>
                         <button className='btn'>Xem Thêm</button>
                     </div>
                     <div className='body-specialty'>
-                        <Slider {...settings}>
+                        <Slider {...this.props.settings}>
                             <div className='img-slider'>
                                 <a href='#'>
-                                    <img src='images/65685.jpg' />
-                                    <h5>Bác sĩ đa khoa</h5>
+                                    <img src='doctor/ĐÀO-MINH-TUẤN.jpg' />
+                                    <h5>PGS.TS.BS Đào Minh Tuấn</h5>
+                                    <span>Chuyên Khoa Nhi</span>
                                 </a>
 
                             </div>
                             <div className='img-slider'>
                                 <a href='#'>
-                                    <img src='images/65685.jpg' />
-                                    <h5>Bác sĩ đa khoa</h5>
-                                    < h5>Bác sĩ đa khoa</h5>
-                                    < h5>Bác sĩ đa khoa</h5>
+                                    <img src='doctor/Ngô-Thị-Hương.jpg' />
+                                    <h4>BSNT Ngô Thị Hương</h4>
+                                    <span>Chuyên Khoa Nhi / Khám và tư vấn vaccin</span>
                                 </a>
                             </div>
                             <div className='img-slider'>
                                 <a href='#'>
-                                    <img src='images/65685.jpg' />
-                                    <h5>Bác sĩ đa khoa</h5>
+                                    <img src='doctor/Nguyễn-Ngọc-Lợi.jpg' />
+                                    <h4>BS TTUT Nguyễn Ngọc Lợi</h4>
+                                    <span>CHuyên Khoa Nhi</span>
                                 </a>
                             </div>
                             <div className='img-slider'>
                                 <a href='#'>
-                                    <img src='images/65685.jpg' />
-                                    <h5>Bác sĩ đa khoa</h5>
+                                    <img src='doctor/Nguyễn-Ngọc-Văn-2.jpg' />
+                                    <h4>ThS. BS Nguyễn Ngọc Văn</h4>
+                                    <span>Chuyên Khoa Răng Hàm Mặt</span>
                                 </a>
                             </div>
                             <div className='img-slider'>
                                 <a href='#'>
-                                    <img src='images/65685.jpg' />
-                                    <h5>Bác sĩ đa khoa</h5>
+                                    <img src='doctor/Phan-Thị-Vân-hà.jpg' />
+                                    <h4>BS CKI Đoàn Thị Vân Hà</h4>
+                                    <span>Chuyên Khoa Tim Mạch</span>
                                 </a>
                             </div>
                             <div className='img-slider'>
                                 <a href='#'>
-                                    <img src='images/65685.jpg' />
-                                    <h5>Bác sĩ đa khoa</h5>
+                                    <img src='doctor/Quach-Thuy-Minh.jpg' />
+                                    <h4>ThS.BS Quách Thúy Minh</h4>
+                                    <span>Chuyên Khoa Tâm bệnh</span>
                                 </a>
                             </div>
                             {/* <div className='img-slider'>
