@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
-import Homepage from './Homepage.scss';
+
 class HomeHeader extends Component {
 
     render() {

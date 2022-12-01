@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { getAllCodeService } from '../../../services/userService'
+import * as actions from '../../../store/actions'
 class UserRedux extends Component {
     constructor(props) {
         super(props);
@@ -14,17 +15,16 @@ class UserRedux extends Component {
     }
 
     async componentDidMount() {
-        try {
-            let res = await getAllCodeService('gender');
-            this.setState({
-                genrderArr: res.data
-            })
-        } catch (e) {
-
-        }
+        this.props.getGenderStart();
     }
 
-
+    componentDidUpdate(preProps, prevState, snapshot) {
+        if (preProps.genderRedux != this.props.genderRedux) {
+            this.setState({
+                genrderArr: this.props.genderRedux
+            })
+        }
+    }
     render() {
         let genders = this.state.genrderArr;
         return (
@@ -111,11 +111,13 @@ class UserRedux extends Component {
 
 const mapStateToProps = state => {
     return {
+        genderRedux: state.admin.genders
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        getGenderStart: () => dispatch(actions.fetchGenderStart())
     };
 };
 
