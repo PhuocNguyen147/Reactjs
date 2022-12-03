@@ -17,7 +17,7 @@ class Specialty extends Component {
 
 
         return (
-            <div className='specialty' >
+            <div className='specialty' id='doctor' >
                 <div className='specialty-container'>
                     <div className='header'>
                         <span className='title'>Đội Ngũ Bác Sĩ</span>

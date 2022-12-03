@@ -17,7 +17,7 @@ class Medical extends Component {
 
 
         return (
-            <div className='medical' >
+            <div className='medical' id='medical' >
                 <div className='specialty-container'>
                     <div className='header'>
                         <span className='title'>Chuyên Khoa Phổ Biến</span>

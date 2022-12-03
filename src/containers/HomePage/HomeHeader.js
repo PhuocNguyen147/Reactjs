@@ -68,20 +68,29 @@ class HomeHeader extends Component {
 
                         <div className='center-content'>
                             <div className='menu-content'>
-                                <div><b>GIỚI THIỆU</b></div>
-                                <div className='small-menu'>Về phòng khám</div>
+                                <a href='#invite'>
+                                    <div><b>GIỚI THIỆU</b></div>
+                                    <div className='small-menu'>Về phòng khám</div>
+                                </a>
+
                             </div>
                             <div className='menu-content'>
                                 <div><b>DỊCH VỤ</b></div>
                                 <div className='small-menu'>Về phòng khám</div>
                             </div>
                             <div className='menu-content'>
-                                <div><b>ĐỘI NGŨ BÁC SĨ</b></div>
-                                <div className='small-menu'>Về phòng khám</div>
+                                <a href='#doctor'>
+                                    <div><b>ĐỘI NGŨ BÁC SĨ</b></div>
+                                    <div className='small-menu'>Về phòng khám</div>
+                                </a>
+
                             </div>
                             <div className='menu-content'>
-                                <div><b>CHUYÊN KHOA</b></div>
-                                <div className='small-menu'>Tìm bác sĩ theo chuyên khoa</div>
+                                <a href='#medical'>
+                                    <div><b>CHUYÊN KHOA</b></div>
+                                    <div className='small-menu'>Tìm bác sĩ theo chuyên khoa</div>
+                                </a>
+
                             </div>
                             <div className='menu-content'>
                                 <div><b>LIÊN HỆ</b></div>

@@ -45,7 +45,7 @@ class ModalUser extends Component {
             if (!this.state[arrInput[i]]) {
                 isValidate = false;
                 alert('Lỗi: ' + arrInput[i]);
-                break
+                break;
             }
         }
         return isValidate;

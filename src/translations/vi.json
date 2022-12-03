@@ -43,7 +43,7 @@
             "manage-doctor": "Quản lý bác sĩ",
             "manage-client": "Quản lý khách hàng",
             "manage-admin": "Admin",
-            "crud": "Thêm Sửa Xóa",
+            "crud": "Thêm Sửa Xóa khách",
             "crud-redux": "Thêm sửa xóa bác sĩ",
             "clinic": "Phòng Khám",
             "manage-clinic": "Quản lý phòng khám",
