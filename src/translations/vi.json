@@ -1,4 +1,18 @@
 {
+    "homeheader": {
+        "Appointment": "ĐẶT LỊCH KHÁM",
+        "serchdoctor": "Tìm bác sĩ theo chuyên khoa",
+        "speciality": "CHUYÊN KHOA",
+        "Patient Test results": "TRA CỨU KẾT QUẢ",
+        "online pharmacy": "NHÀ THUỐC ONLINE",
+        "clinic introduction": "GIỚI THIỆU",
+        "about the clinic": "Về phòng khám",
+        "service": "DỊCH VỤ",
+        "DOCTOR'S TEAM": "ĐỘI NGŨ BÁC SĨ",
+        "CONTACT": "LIÊN HỆ",
+        "contact at the office": "Tại văn phòng",
+        "NEWS": "TIN TỨC"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",

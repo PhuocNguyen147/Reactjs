@@ -55,6 +55,7 @@ body {
                 text-align: center;
                 padding: 0 175px;
 
+
                 .flag {
                     img {
                         width: 25px;
@@ -64,6 +65,15 @@ body {
                 li {
                     margin-right: 16px;
                     box-sizing: border-box;
+
+                    .VI {
+
+                        cursor: pointer;
+                    }
+
+                    .EN {
+                        cursor: pointer;
+                    }
 
                 }
             }

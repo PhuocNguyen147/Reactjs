@@ -1,4 +1,18 @@
 {
+    "homeheader": {
+        "Appointment": "APPOINTMENT",
+        "serchdoctor": "Search Doctor",
+        "speciality": "SPECIALITY",
+        "Patient Test results": "PATIENT TEST RESULTS",
+        "online pharmacy": "ONLINE PHARMACY",
+        "clinic introduction": "INTRODUCTION",
+        "about the clinic": "About the clinic",
+        "service": "SERVICE",
+        "DOCTOR'S TEAM": "DOCTOR'S TEAM",
+        "CONTACT": "CONTACT",
+        "contact at the office": "At the office",
+        "NEWS": "NEWS"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
