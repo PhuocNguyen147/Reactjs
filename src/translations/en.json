@@ -11,7 +11,9 @@
         "DOCTOR'S TEAM": "DOCTOR'S TEAM",
         "CONTACT": "CONTACT",
         "contact at the office": "At the office",
-        "NEWS": "NEWS"
+        "NEWS": "NEWS",
+        "welcome": "Welcome",
+        "to manage": "to the admin page"
     },
     "common": {
         "add": "Add",

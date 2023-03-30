@@ -10,22 +10,27 @@
     justify-content: space-between;
     align-items: center;
 
-    .admin {
-        font-size: large;
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-right: 300px;
-    }
+
 
     .bar {
         cursor: pointer;
-
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-weight: 600;
+        position: relative;
+
+        .admin {
+            font-size: large;
+            font-weight: 300;
+            // text-transform: uppercase;
+            margin-right: 10px;
+            color: #e7f4f6;
+        }
 
         .language-vi {
             color: $common-text-color;
-            line-height: 40px;
-            height: 40px;
+
             padding: 8px 8px;
 
 
@@ -46,8 +51,7 @@
 
         .language-en {
             color: $common-text-color;
-            line-height: 40px;
-            height: 40px;
+            // line-height: 40px;
             padding: 8px 8px;
 
             &:hover {

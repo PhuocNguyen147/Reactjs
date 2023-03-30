@@ -6,7 +6,7 @@ import Navigator from '../../components/Navigator';
 import { adminMenu } from './menuApp';
 import './Header.scss';
 import { LANGUAGES } from '../../utils'
-
+import { FormattedMessage } from 'react-intl';
 class Header extends Component {
     handleChangeLanguage = (language) => {
         this.props.changeLangugeAppRedux(language)
@@ -21,16 +21,17 @@ class Header extends Component {
                 <div className="header-tabs-container">
                     <Navigator menus={adminMenu} />
                 </div>
-                <div className='admin'>
-                    <span className='Welcome'>Xin chào, {userInfo && userInfo.firstName ? userInfo.firstName : ' '} đến với trang quản trị</span>
-                </div>
+
 
 
                 <div className='bar'>
+                    <div className='admin'>
+                        <span className='Welcome'><FormattedMessage id="homeheader.welcome"> </FormattedMessage>, {userInfo && userInfo.firstName ? userInfo.firstName : ' '} <FormattedMessage id="homeheader.to manage"></FormattedMessage> !   </span>
+                    </div>
                     {/* nut language  */}
-
                     <span className={language === LANGUAGES.VI ? 'language-vi active' : "language-vi"} onClick={() => this.handleChangeLanguage(LANGUAGES.VI)}>VN</span>
                     <span className={language === LANGUAGES.EN ? 'language-en active' : "language-en"} onClick={() => this.handleChangeLanguage(LANGUAGES.EN)}>EN</span>
+
 
                     {/* nút logout */}
                     <div className="btn btn-logout" onClick={processLogout} title="Log out">
