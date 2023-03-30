@@ -1,0 +1,44 @@
+.section-about {
+
+    height: 600px;
+    padding: 0px 100px;
+    display: flex;
+    flex-direction: column;
+
+    b {
+        margin-left: 100px;
+        padding-top: 30px;
+        font-weight: 900;
+        font-size: 22px;
+        color: rgb(15, 15, 61);
+    }
+
+    .section-about-content {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        gap: 20px;
+
+        .content-left {
+            margin-left: 100px;
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+
+        .content-right {
+            width: 40%;
+
+            .title {
+                font-size: 22px;
+                font-weight: 800;
+
+            }
+
+            .content1 {
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+    }
+}

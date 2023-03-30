@@ -7,7 +7,8 @@ import Slider from './section/Slider';
 import Specialty from './section/Specialty';
 import Medical from './section/Medical';
 import Footer from './section/Footer';
-
+import About from './section/About';
+import './HomePage.scss'
 class HomePage extends Component {
 
     render() {
@@ -28,6 +29,7 @@ class HomePage extends Component {
                 <Specialty settings={settings} />
 
                 <Medical settings={settings} />
+                <About />
                 <Footer />
             </div>
 

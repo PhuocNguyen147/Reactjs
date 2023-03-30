@@ -1,35 +1,83 @@
 @import "../../styles/common.scss";
 
 .header-container {
-    z-index: 99;
-    display: flex;
-    justify-content: space-between;
     background-color: #2fb931; //$colormain;
     color: $common-text-color;
     height: 40px;
     position: relative;
+    z-index: 99;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 
     .admin {
         font-size: large;
         font-weight: 600;
-
-        margin-right: 430px;
         text-transform: uppercase;
+        margin-right: 300px;
     }
 
-    .btn-logout {
-        color: $common-text-color;
-        line-height: 40px;
-        height: 40px;
-        padding: 0 10px;
+    .bar {
+        cursor: pointer;
 
-        &:hover {
-            background-color: darken($colormain, 5);
+        font-weight: 600;
+
+        .language-vi {
+            color: $common-text-color;
+            line-height: 40px;
+            height: 40px;
+            padding: 8px 8px;
+
+
+            &:hover {
+                background-color: darken($colormain, 5);
+                font-weight: 700;
+            }
+
+            &.active {
+                opacity: 1;
+                color: #1a3edf;
+            }
+
+            i {
+                font-size: $base-size + 1px;
+            }
         }
 
-        i {
-            font-size: $base-size + 1px;
+        .language-en {
+            color: $common-text-color;
+            line-height: 40px;
+            height: 40px;
+            padding: 8px 8px;
+
+            &:hover {
+                background-color: darken($colormain, 5);
+            }
+
+            i {
+                font-size: $base-size + 1px;
+            }
+
+            &.active {
+                opacity: 1;
+                color: #1ac5df;
+            }
+        }
+
+        .btn-logout {
+            color: $common-text-color;
+            line-height: 40px;
+            height: 40px;
+            padding: 0 10px;
+
+            &:hover {
+                background-color: darken($colormain, 5);
+            }
+
+            i {
+                font-size: $base-size + 1px;
+            }
         }
     }
+
 }

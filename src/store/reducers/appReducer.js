@@ -36,7 +36,7 @@ const appReducer = (state = initialState, action) => {
             console.log('Phuoc check redux:', action)
             return {
                 ...state,
-                language: action.language,
+                language: action.language
 
             }
         default:

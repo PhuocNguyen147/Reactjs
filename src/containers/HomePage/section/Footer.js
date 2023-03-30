@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import './Footer.scss'
-//slick  
+//slick
 // import React from 'react';
 // import { Slide } from 'react-slick';
 
@@ -32,6 +32,8 @@ class Footer extends Component {
                         <div class="about">
                             <h3>Nguyễn Hữu Phước</h3>
                             <p>Khoa Công Nghệ Thông Tin</p>
+                            <p>&copy; 2023 Hospital B1809281</p>
+
                         </div>
                         <div class="list">
                             <div class="nav">
@@ -51,7 +53,7 @@ class Footer extends Component {
                     </div>
                     <div class="clear"></div>
                     <div class="copyrights">
-                        <p>2022. All rights reserved</p>
+
                     </div>
                 </div>
             </ React.Fragment >

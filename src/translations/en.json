@@ -45,12 +45,26 @@
             "system-administrator": {
                 "header": "System Administrator",
                 "user-manage": "User manage",
-                "user-redux": "redux",
+                "user-redux": "manage redux",
                 "register-package-group-or-account": "Register service package for group/account"
             },
             "system-parameter": {
                 "header": "System-parameter"
             }
+        },
+        "admin": {
+            "manage-user": "Manage",
+            "manage-doctor": "Quản lý bác sĩ",
+            "manage-client": "Quản lý khách hàng",
+            "manage-admin": "Admin",
+            "crud": "Thêm Sửa Xóa khách",
+            "crud-redux": "Thêm sửa xóa bác sĩ",
+            "clinic": "clinic",
+            "manage-clinic": "Quản lý phòng khám",
+            "branch": "branch",
+            "manage-branch": "Quản lý chi nhánh",
+            "specialty": "specialty",
+            "manage-specialty": "Quản lý chuyên Khoa"
         }
     },
     "system": {
