@@ -220,33 +220,37 @@ class UserRedux extends Component {
                             </select>
                         </div>
                         <div className="col-3">
-                            <label for="inputimage" className="preview-img-container">image</label>
+                            <label for="inputimage" >image</label>
+                            <div className="preview-img-container">
+                                <input type="file" hidden id="previewImg"
+                                    onChange={(event) => this.handleOnchangeImage(event)}
+                                />
 
-                            <input type="file"
-                                onChange={(event) => this.handleOnchangeImage(event)}
-                            />
-                            <label className='label-upload' htmlFor="previewImg">{/* tải ảnh<i className="fas fa-upload"></i >*/}</label>
-                            <div className='preview-image'
-                                style={{ backgroundImage: `url(${this.state.previewImgURl})` }}
-                                onclick={() => this.openPreviewImage()}
-                            >
+                                <label className='label-upload' htmlFor="previewImg">tải ảnh<i className="fas fa-upload"></i ></label>
+                                <div className='preview-image'
+
+                                    style={{ backgroundImage: `url(${this.state.previewImgURL})` }}
+                                    onClick={() => this.openPreviewImage()}
+                                >
+                                </div>
                             </div>
+
                         </div>
                         <div className="col-12">
-                            <button type="submit" className="btn btn-primary"
+                            <button type="submit" className="btn btn-primary p-1"
                                 onClick={() => this.handleSaveUser()}
-                            >Sign in</button>
+                            >save</button>
                         </div>
                     </form>
-                    {this.props.isOpen === true &&
-                        <Lightbox
-                            mainSrc={this.state.previewImgURL}
-                            onCloseRequest={() => this.setState({ isOpen: false })}
-                        />
-                    }
+
                 </div>
 
-
+                {this.state.isOpen === true &&
+                    <Lightbox
+                        mainSrc={this.state.previewImgURL}
+                        onCloseRequest={() => this.setState({ isOpen: false })}
+                    />
+                }
 
             </React.Fragment>
         )

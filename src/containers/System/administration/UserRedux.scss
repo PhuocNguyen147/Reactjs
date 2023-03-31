@@ -1,6 +1,11 @@
 .preview-img-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+
     .label-upload {
-        padding: 5px !important;
+        padding: 20px !important;
         border-radius: 3px !important;
         background: #ddd !important;
         cursor: pointer !important;
@@ -8,14 +13,23 @@
         &:hover {
             opacity: 0.9;
         }
+
+        i {
+            font-size: x-large;
+
+            margin-left: 6px;
+        }
     }
 
     .preview-image {
-        height: 50px !important;
-        width: 100% !important;
-        border: 1px solid white;
+        height: 70px !important;
+        width: 130px !important;
+        border: 2px solid rgb(227, 219, 219);
         background: center center no-repeat;
         background-size: contain;
         cursor: pointer;
+        margin-left: 15px;
+        // background: rgba($color: #ddd, $alpha: 0.5);
+        // border: solid 1px rgb(199, 189, 210);
     }
 }
