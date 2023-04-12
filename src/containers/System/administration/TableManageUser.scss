@@ -96,10 +96,41 @@
 
 // }
 
+.m-5 {
+    margin: 50px 200px !important;
+
+    .table-bordered {
+        border: 2px solid #b0afaf !important;
+        background: #e4fff4;
+
+        .table-success {
+            --bs-table-bg: #49cf92;
+            color: #2854e7;
+        }
+
+        .table-bordered {
+            border: 1px solid #ddd !important;
+            background: #abe0c7;
+
+
+        }
+
+    }
+
+    tr {
+        font-weight: bold;
+    }
+
+
+
+
+}
+
+
 .table-success {
-    color: rgb(10, 113, 187);
+    color: #2854e7;
 }
 
 tr {
-    font-weight: 600;
+    font-weight: bold;
 }

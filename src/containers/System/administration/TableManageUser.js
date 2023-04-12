@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import * as actions from '../../../store/actions'
-
+import './UserRedux'
 import './TableManageUser.scss';
 
 
@@ -29,6 +29,10 @@ class TableManageUser extends Component {
     handleDeleteUser = (user) => {
         this.props.deleteUserRedux(user.id)
     }
+    handleEditUser = (user) => {
+
+        this.props.handleEditUserFromParentPropkey(user)
+    }
     render() {
 
         console.log('Phuoc check listuser', this.props.listUsers)
@@ -36,7 +40,7 @@ class TableManageUser extends Component {
         let arrUsers = this.state.usersRedux;
         return (
 
-            <div className="m-5">
+            <div className="m-5 ">
                 <div className="row">
                     <div className="col-xs-12">
                         <div className="table-responsive" data-pattern="priority-columns">
@@ -62,7 +66,9 @@ class TableManageUser extends Component {
                                                     <td>{item.lastName}</td>
                                                     <td>{item.address}</td>
                                                     <td >
-                                                        <button className='edit'> <i className='fas fa-edit'></i></button>
+                                                        <button
+                                                            onClick={() => this.handleEditUser(item)}
+                                                            className='edit'> <i className='fas fa-edit'></i></button>
                                                         <button
                                                             onClick={() => this.handleDeleteUser(item)}
                                                             className='delete'> <i className='fas fa-user-slash'></i></button>
