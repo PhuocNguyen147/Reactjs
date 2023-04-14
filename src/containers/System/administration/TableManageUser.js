@@ -35,8 +35,8 @@ class TableManageUser extends Component {
     }
     render() {
 
-        console.log('Phuoc check listuser', this.props.listUsers)
-        console.log('hoidanit check state:', this.state.usersRedux)
+        // console.log('Phuoc check listuser', this.props.listUsers)
+        // console.log('Phuoc check state:', this.state.usersRedux)
         let arrUsers = this.state.usersRedux;
         return (
 

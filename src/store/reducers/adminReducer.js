@@ -5,7 +5,8 @@ const initialState = {
     genders: [],
     roles: [],
     positions: [],
-    users: []
+    users: [],
+    topDoctors: [], //tạo mảng rỗng cho bác sĩ top
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -13,7 +14,7 @@ const adminReducer = (state = initialState, action) => {
         case actionTypes.FETCH_GENDER_START:
             let copyState = { ...state };
             copyState.isLoadingGender = true;
-            console.log('action', action)
+            // console.log('action', action)
             return {
                 ...copyState
             }
@@ -61,7 +62,17 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state
             }
+        case actionTypes.FETCH_TOP_DOCTORS_SUCCESS:
+            state.topDoctors = action.dataDoctors;
+            return {
+                ...state
+            }
 
+        case actionTypes.FETCH_TOP_DOCTORS_FAIDED:
+            state.topDoctors = [];
+            return {
+                ...state
+            }
         default:
             return state;
 

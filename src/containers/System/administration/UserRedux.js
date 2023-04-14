@@ -299,7 +299,7 @@ class UserRedux extends Component {
                             </select>
                         </div>
                         <div className="col-3">
-                            <label for="inputimage" >image</label>
+                            <label for="inputimage" >Tải ảnh</label>
                             <div className="preview-img-container">
                                 <input type="file" hidden id="previewImg"
                                     onChange={(event) => this.handleOnchangeImage(event)}

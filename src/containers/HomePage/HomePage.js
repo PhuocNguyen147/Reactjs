@@ -27,7 +27,6 @@ class HomePage extends Component {
                 <Slider />
                 <Carousel />
                 <Specialty settings={settings} />
-
                 <Medical settings={settings} />
                 <About />
                 <Footer />

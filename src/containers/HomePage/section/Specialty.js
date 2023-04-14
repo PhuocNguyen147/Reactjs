@@ -9,12 +9,17 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Session from 'redux-persist/lib/storage/session';
-
+import * as actions from '../../../store/actions'
 
 class Specialty extends Component {
+    constructor(props) { //hàm tạo
 
+    }
+    componentDidMount() { // fire redux
+        this.props.loadTopDoctors();
+    }
     render() {
-
+        console.log('check', this.props.topDoctorsRedux)
 
         return (
             <div className='specialty' id='doctor' >
@@ -93,12 +98,15 @@ class Specialty extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        topDoctorsRedux: state.admin.topDoctors //lấy từ file  -> adminReducer -> adminActions
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        loadTopDoctors: () => dispatch(actions.fetchTopDoctor()),
+
     };
 };
 
