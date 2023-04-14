@@ -43,21 +43,21 @@ class UserRedux extends Component {
             let arrGenders = this.props.genderRedux
             this.setState({
                 genrderArr: arrGenders,
-                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : ''
+                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : ''
             })
         }
         if (prevProps.roleRedux !== this.props.roleRedux) {
             let arrRoles = this.props.roleRedux
             this.setState({
                 roleArr: arrRoles,
-                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : ''
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : ''
             })
         }
         if (prevProps.positionRedux !== this.props.positionRedux) {
             let arrPositions = this.props.positionRedux
             this.setState({
                 positionArr: arrPositions,
-                posion: arrPositions && arrPositions.length > 0 ? arrPositions[0].key : ''
+                posion: arrPositions && arrPositions.length > 0 ? arrPositions[0].keyMap : ''
             })
         }
 
@@ -72,9 +72,9 @@ class UserRedux extends Component {
                 lastName: '',
                 phoneNumber: '',
                 address: '',
-                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].key : '',
-                position: arrPositions && arrPositions.length > 0 ? arrPositions[0].key : '',
-                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].key : '',
+                gender: arrGenders && arrGenders.length > 0 ? arrGenders[0].keyMap : '',
+                position: arrPositions && arrPositions.length > 0 ? arrPositions[0].keyMap : '',
+                role: arrRoles && arrRoles.length > 0 ? arrRoles[0].keyMap : '',
                 avatar: '',
                 action: CRUD_ACTIONS.CREATE,
                 previewImgURL: '',
@@ -87,7 +87,7 @@ class UserRedux extends Component {
         let data = event.target.files;
         let file = data = data[0];
         if (file) {
-            let base46 = await CommonUtils.getBase64(file);
+            let base46 = await CommonUtils.getBase64(file); //Hàm encode mã hóa ảnh thành base64
 
             let ObjectUrl = URL.createObjectURL(file);
             this.setState({
@@ -179,7 +179,7 @@ class UserRedux extends Component {
 
         let imageBase64 = '';  // mã hóa thông tin hình ảnh
         if (user.image) {
-            imageBase64 = new Buffer(user.image, 'base64').toString('binary'); // convert sang binary
+            imageBase64 = new Buffer(user.image, 'base64').toString('binary'); // convert sang binary (decode)
         }
         this.setState({
             email: user.email,
@@ -265,7 +265,7 @@ class UserRedux extends Component {
                                 onChange={(event) => { this.onChangeInput(event, 'gender') }}
                             >
                                 {genders && genders.length > 0 && genders.map((item, index) => {
-                                    return (<option key={index} value={item.key}>  {item.valueVi}</option>)
+                                    return (<option key={index} value={item.keyMap}>  {item.valueVi}</option>)
                                 })}
 
 
@@ -279,7 +279,7 @@ class UserRedux extends Component {
                                 onChange={(event) => { this.onChangeInput(event, 'position') }}
                             >
                                 {positions && positions.length > 0 && positions.map((item, index) => {
-                                    return (<option key={index} value={item.key}> {item.valueVi}</option>)
+                                    return (<option key={index} value={item.keyMap}> {item.valueVi}</option>)
                                 })}
 
 
@@ -293,7 +293,7 @@ class UserRedux extends Component {
                                 {roles && roles.length > 0
                                     && roles.map((item, index) => {
                                         return (
-                                            <option key={index} value={item.key}>{item.valueVi}</option>
+                                            <option key={index} value={item.keyMap}>{item.valueVi}</option>
                                         )
                                     })}
                             </select>

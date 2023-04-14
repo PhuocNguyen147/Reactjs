@@ -10,17 +10,31 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Session from 'redux-persist/lib/storage/session';
 import * as actions from '../../../store/actions'
-
+import { LANGUAGES } from '../../../utils';
 class Specialty extends Component {
     constructor(props) { //hàm tạo
-
+        super(props)
+        this.state = {
+            arrDoctors: []
+        }
     }
+
+    // hàm xem thay đổi biến giá trị và gán lại state
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (prevProps.topDoctorsRedux !== this.props.topDoctorsRedux) {
+            this.setState({
+                arrDoctors: this.props.topDoctorsRedux
+            })
+        }
+    }
+
     componentDidMount() { // fire redux
         this.props.loadTopDoctors();
     }
     render() {
         console.log('check', this.props.topDoctorsRedux)
-
+        let arrDoctors = this.state.arrDoctors;
+        let { language } = this.props
         return (
             <div className='specialty' id='doctor' >
                 <div className='specialty-container'>
@@ -30,17 +44,40 @@ class Specialty extends Component {
                     </div>
                     <div className='body-specialty'>
                         <Slider {...this.props.settings}>
-                            <div className='img-slider'>
-                                <a href='#'>
-                                    <img src='doctor/ĐÀO-MINH-TUẤN.jpg' />
-                                    <h5>PGS.TS.BS Đào Minh Tuấn</h5>
-                                    <span>Chuyên Khoa Nhi</span>
-                                </a>
+                            {arrDoctors && arrDoctors.length > 0 &&
+                                arrDoctors.map((item, index) => {
+                                    let imageBase64 = '';
+                                    if (item.image) {
+                                        imageBase64 = new Buffer(item.image, 'base64').toString('binary'); // convert sang binary (decode)
+                                    }
+                                    let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName} `;
+                                    let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
+                                    return (
+                                        < div className='img-slider' key={index} >
+                                            <a href='#'>
+                                                {/* <div className='img' > */}
+                                                {/* <div className='img' style={{ backgroundImage: `url(${imageBase64})` }}> </div> */}
+                                                {/* </div> */}
+                                                <div className='bg-img'>
+                                                    <img style={{ backgroundImage: `url(${imageBase64})` }} />
+                                                </div>
 
-                            </div>
-                            <div className='img-slider'>
+
+                                                <h5>{language === LANGUAGES.VI ? nameVi : nameEn}</h5>
+                                                <span>Chuyên Khoa Nhi</span>
+                                            </a>
+                                        </div>
+                                    )
+
+                                })
+                            }
+
+
+
+
+                            {/* <div className='img-slider'>
                                 <a href='#'>
-                                    <img src='doctor/Ngô-Thị-Hương.jpg' />
+                                   
                                     <h4>BSNT Ngô Thị Hương</h4>
                                     <span>Chuyên Khoa Nhi / Khám và tư vấn vaccin</span>
                                 </a>
@@ -72,19 +109,13 @@ class Specialty extends Component {
                                     <h4>ThS.BS Quách Thúy Minh</h4>
                                     <span>Chuyên Khoa Tâm bệnh</span>
                                 </a>
-                            </div>
-                            {/* <div className='img-slider'>
-                            <h3>7</h3>
-                        </div>
-                        <div className='img-slider'>
-                            <h3>8</h3>
-                        </div> */}
+                            </div> */}
                         </Slider>
                     </div>
 
 
-                </div>
-            </div>
+                </div >
+            </div >
 
 
 
@@ -98,6 +129,7 @@ class Specialty extends Component {
 
 const mapStateToProps = state => {
     return {
+        language: state.app.language,
         isLoggedIn: state.user.isLoggedIn,
         topDoctorsRedux: state.admin.topDoctors //lấy từ file  -> adminReducer -> adminActions
     };
