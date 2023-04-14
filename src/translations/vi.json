@@ -146,5 +146,11 @@
             "remove-assign-fail": "Bỏ gán gói dịch vụ cho khách hàng thất bại",
             "sure-delete-assign": "Bạn có chắc chắn muốn bỏ gán gói dịch vụ cho khách hàng?"
         }
+    },
+    "homepages": {
+        "specialty": {
+            "team of doctors": "Đội ngũ bác sĩ",
+            "more-infor": "Xem thêm"
+        }
     }
 }

@@ -11,6 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Session from 'redux-persist/lib/storage/session';
 import * as actions from '../../../store/actions'
 import { LANGUAGES } from '../../../utils';
+import { FormattedMessage } from 'react-intl';
 class Specialty extends Component {
     constructor(props) { //hàm tạo
         super(props)
@@ -39,8 +40,8 @@ class Specialty extends Component {
             <div className='specialty' id='doctor' >
                 <div className='specialty-container'>
                     <div className='header'>
-                        <span className='title'>Đội Ngũ Bác Sĩ</span>
-                        <button className='btn'>Xem Thêm</button>
+                        <span className='title'><FormattedMessage id={"homepages.specialty.team of doctors"}></FormattedMessage> </span>
+                        <button className='btn'><FormattedMessage id={"homepages.specialty.more-infor"}></FormattedMessage></button>
                     </div>
                     <div className='body-specialty'>
                         <Slider {...this.props.settings}>
