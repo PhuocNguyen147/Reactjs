@@ -56,9 +56,9 @@
         },
         "admin": {
             "manage-user": "Manage",
-            "manage-doctor": "Quản lý bác sĩ",
-            "manage-client": "Quản lý khách hàng",
-            "manage-admin": "Admin",
+            "manage-doctor": "Manage Doctor",
+            "manage-client": "Manage Client",
+            "manage-admin": "Manage Admin",
             "crud": "Thêm Sửa Xóa khách",
             "crud-redux": "Thêm sửa xóa bác sĩ",
             "clinic": "clinic",
