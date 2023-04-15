@@ -68,4 +68,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
 
-### install npm install --save react-markdown-editor-lite@1.3.0
+### install npm install --save react-markdown-editor-lite@1.3.0           npm install --save markdown-it@12.1.0
