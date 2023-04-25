@@ -1,5 +1,5 @@
 import axios from '../axios'
-
+// nhận api từ server
 const handleLoginApi = (userEmail, userPassword) => {
     return axios.post('api/login', { email: userEmail, password: userPassword }); //login 
 }
@@ -31,12 +31,18 @@ const getAllCodeService = (inputType) => {
 }
 
 const getTopDoctorHomeService = (limit) => {
-    return axios.get(`api/top-doctor-home?limit=${limit}`)
+    return axios.get(`/api/top-doctor-home?limit=${limit}`)
 }
+
+const getAllDoctorService = () => {
+    return axios.get(`/api/getalldoctor`)
+}
+
 export {
     handleLoginApi,
     getAllUsers, createNewUserService,
     deleteUserService, editUserService,
-    getAllCodeService, getTopDoctorHomeService
+    getAllCodeService, getTopDoctorHomeService,
+    getAllDoctorService
 
 }

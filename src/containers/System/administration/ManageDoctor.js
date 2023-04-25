@@ -81,7 +81,7 @@ class ManageDoctor extends Component {
                     <div className='content-right'>
                         <label> Phần giới thiệu bác sĩ:</label>
                         <textarea className='form-control' rows='4'
-                            onChange={(event) => this.handleOnChangeDese(event)}
+                            onChange={(event) => this.handleOnChangeDese(event)}  //bắt sự kiên thay đổi
                             value={this.state.description}
                         >
 
