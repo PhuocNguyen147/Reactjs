@@ -1,6 +1,9 @@
 
 import actionTypes from './actionTypes';
-import { getAllCodeService, createNewUserService, getAllUsers, deleteUserService, editUserService, getTopDoctorHomeService, getAllDoctorService } from '../../services/userService';
+import {
+    getAllCodeService, createNewUserService, getAllUsers,
+    deleteUserService, editUserService, getTopDoctorHomeService, getAllDoctorService, saveDetailDoctorService
+} from '../../services/userService';
 import { Toast, toast } from 'react-toastify';
 
 // export const fetchGenderStart = () => ({
@@ -271,3 +274,34 @@ export const fetchAllDoctors = () => {
 
 
 }
+
+
+export const saveDetailDoctor = (data) => {
+    return async (dispatch, getState) => {
+        try {
+
+            let res = await saveDetailDoctorService(data)
+            if (res && res.errCode === 0) {
+                toast.success("Lưu thông tin bác sĩ thành công")
+                dispatch({
+                    type: actionTypes.SAVE_DETAIL_DOCTOR_SUCCESS,
+                })
+            }
+            else {
+                toast.error("Lưu thông tin bác sĩ không thành công", res)
+                dispatch({
+                    type: actionTypes.SAVE_DETAIL_DOCTOR_FAIDED
+                })
+            }
+
+        } catch (e) {
+            console.log('SAVE_DETAIL_DOCTOR_FAIDED', e)
+            toast.error("Lưu thông tin bác sĩ không thành công")
+            dispatch({
+                type: actionTypes.SAVE_DETAIL_DOCTOR_FAIDED
+            })
+
+        }
+    }
+}
+

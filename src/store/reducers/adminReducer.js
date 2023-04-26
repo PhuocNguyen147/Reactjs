@@ -1,5 +1,5 @@
 import actionTypes from '../actions/actionTypes';
-
+// liên kết với const mapStateToProps = state
 const initialState = {
     isLoadingGender: false,
     genders: [],
