@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from "../../utils"
-
+import { withRouter } from 'react-router'; // đường đi để truy xuất đến trang mới
 import { changeLangugeApp } from '../../store/actions';
 class HomeHeader extends Component {
 
@@ -12,7 +12,9 @@ class HomeHeader extends Component {
         this.props.changeLangugeAppRedux(language)
 
     }
-
+    returnToHome = () => {
+        this.props.history.push(`/home`)
+    }
     render() {
 
 
@@ -84,7 +86,7 @@ class HomeHeader extends Component {
                     <div className='home-header-content-bottom  '>
                         <div className='left-content '>
                             <i className="fas fa-bars"></i>
-                            <div className='logo'></div>
+                            <div className='logo' onClick={() => this.returnToHome()}></div>
 
                         </div>
 
@@ -174,4 +176,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeHeader); //kết nối redux và react với nhau
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeHeader)); //kết nối redux và react với nhau

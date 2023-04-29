@@ -68,7 +68,7 @@ class DetailDoctor extends Component {
                     <div className='schedule-doctor' >
 
                     </div>
-                    <div className='ditail-intro-doctor'>
+                    <div className='detail-intro-doctor'>
                         {detailDoctor && detailDoctor.Markdown && detailDoctor.Markdown.contentHTML &&
                             <div dangerouslySetInnerHTML={{ __html: detailDoctor.Markdown.contentHTML }}></div> // fix lỗi không in ra html
                         }

@@ -9,7 +9,8 @@ import MdEditor from 'react-markdown-editor-lite'; // soan van ban
 // import style manually
 import 'react-markdown-editor-lite/lib/index.css';
 import Select from 'react-select';
-import { LANGUAGES } from '../../../utils'
+import { CRUD_ACTIONS, LANGUAGES } from '../../../utils'
+import { getDetailInforDoctor } from '../../../services/userService'
 // select chon doctor
 const options = [
     { value: 'chocolate', label: 'Chocolate' },
@@ -27,6 +28,7 @@ class ManageDoctor extends Component {
             selectedOption: '',
             description: '',
             listDoctors: [],
+            hasOldData: false,
 
         }
     }
@@ -68,11 +70,13 @@ class ManageDoctor extends Component {
     }
 
     handleSaveContentMarkdown = () => {
+        let { hasOldData } = this.state;
         this.props.saveDetailDoctor({
             contentHTML: this.state.contentHTML,
             contentMarkdown: this.state.contentMarkdown,
             description: this.state.description,
             doctorId: this.state.selectedOption.value,
+            action: hasOldData === true ? CRUD_ACTIONS.EDIT : CRUD_ACTIONS.CREATE,
         })
     }
 
@@ -86,10 +90,28 @@ class ManageDoctor extends Component {
         })
         console.log('handleEditorChange', html, text);
     }
-    handleChange = selectedOption => {
-        this.setState(
-            { selectedOption }
-        );
+    handleChangeSelect = async (selectedOption) => {
+        this.setState({ selectedOption });
+        let res = await getDetailInforDoctor(selectedOption.value)
+        if (res && res.errCode === 0 && res.data && res.data.Markdown) {
+            let markdown = res.data.Markdown;
+            this.setState({
+                contentHTML: markdown.contentHTML,
+                contentMarkdown: markdown.contentMarkdown,
+                description: markdown.description,
+                hasOldData: true,
+            })
+        }
+        else {
+            this.setState({
+                contentHTML: '',
+                contentMarkdown: '',
+                description: '',
+                hasOldData: false,
+            })
+        }
+        console.log('handleChangeSelect', res)
+
     };
 
     handleOnChangeDese = (event) => {
@@ -99,6 +121,7 @@ class ManageDoctor extends Component {
     }
     render() {
         // console.log('phuoc check', this.state)
+        let { hasOldData } = this.state
         return (
             <div className='manage-doctor'>
                 <div className='manage-doctor-title'>
@@ -109,7 +132,7 @@ class ManageDoctor extends Component {
                         <label >Chọn bác sĩ</label>
                         <Select
                             value={this.state.selectedOption} // lấy theo state hiện tại
-                            onChange={this.handleChange}
+                            onChange={this.handleChangeSelect}
                             options={this.state.listDoctors} // danh sach doctor
                         />
                     </div>
@@ -129,12 +152,15 @@ class ManageDoctor extends Component {
                         {/* martdown editor */}
                         <MdEditor style={{ height: '500px' }}
                             renderHTML={text => mdParser.render(text)}
-                            onChange={this.handleEditorChange} />
+                            onChange={this.handleEditorChange}
+                            value={this.state.contentMarkdown} />  {/* thêm dòng này để lấy truyền state hiện tại vào contentMarkdown */}
                     </div>
                 </div>
-                <button className='save-doctor btn-success m-5  '
-                    onClick={() => this.handleSaveContentMarkdown()}
-                >Lưu thông tin</button>
+                <button className={hasOldData === true ? 'save-doctor btn-success m-5 ' : 'create-content-doctor btn-primary m-5'}
+                    onClick={() => this.handleSaveContentMarkdown()}>
+                    {hasOldData === true ?
+                        <span>Lưu thông tin</span> : <span>Tạo thông tin</span>}
+                </button>
             </div>
 
 
