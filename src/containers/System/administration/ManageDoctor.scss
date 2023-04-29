@@ -1,9 +1,11 @@
 .manage-doctor {
+    background: rgb(57, 226, 170);
+
     .manage-doctor-title {
         text-align: center;
         font-weight: 700;
-        color: rgb(59, 150, 132);
-        margin: 18px 0;
+        color: rgb(21, 18, 239);
+        padding: 18px 0;
         font-size: 25px;
         text-transform: uppercase;
     }
@@ -27,8 +29,15 @@
         font-weight: 700;
         color: rgb(41, 59, 55);
 
+        label {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
         .content-left {
             width: 40%;
+
+
         }
 
         .content-right {

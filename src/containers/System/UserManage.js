@@ -124,44 +124,7 @@ class UserManage extends Component {
                     />
                 }
                 <div className='title text-center'>QUẢN LÝ NGƯỜI DÙNG</div>
-                {/* <div class="m-5">
 
-                    <table class="table">
-                        <thead>
-                            <tr class="table-success" >
-                                <th>Email</th>
-                                <th>Firstname</th>
-                                <th>Lastname</th>
-                                <th>Adrres</th>
-                                <th>Action</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                            {arrUsers && arrUsers.map((item, index) => {
-                                console.log('phuoc map', item, index);
-                                return (
-                                    <tr>
-                                        <td>{item.email}</td>
-                                        <td>{item.firstName}</td>
-                                        <td>{item.lastName}</td>
-                                        <td>{item.address}</td>
-                                        <td>
-                                            <button>Edit</button>
-                                            <button>Delete</button>
-                                        </td>
-                                    </tr>
-
-                                )
-                            })
-                            }
-
-
-
-                        </tbody>
-                    </table>
-                </div> */}
                 <div className='mx-3 '>
                     <button className='btn btn-success px-3' onClick={() => this.handleAddUser()}>
 

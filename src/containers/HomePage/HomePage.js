@@ -22,8 +22,8 @@ class HomePage extends Component {
 
 
         return (
-            <div>
-                <HomeHeader />
+            <div >
+                <HomeHeader isShowBanner={false} />
                 <Slider />
                 <Carousel />
                 <Specialty settings={settings} />

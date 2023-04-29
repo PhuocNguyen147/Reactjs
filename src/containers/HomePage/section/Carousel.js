@@ -20,7 +20,7 @@ class Carousel extends Component {
                 <header>
                     <div className="heading text-center mx-auto">
                         <h2>Giới Thiệu về phòng khám và các chi nhánh</h2>
-                        <p className="my-3">
+                        <p className="font ">
                             Phòng khám B1809281 là dự án đầu tiên của Công ty Cổ phần Đầu tư Dịch vụ Y tế, đồng thời là phòng khám đầu tiên của Hệ thống Phòng khám khoa Quốc tế
 
                             Khởi đầu dự án từ đầu năm 8/2022, sau 5 tháng xây dựng và triển khai, Phòng khám Nhi khoa Quốc tế The Medcare Hải Phòng đã chính thức hoàn thiện và đi vào hoạt động, bắt đầu từ ngày 3/12/2022

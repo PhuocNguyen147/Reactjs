@@ -55,58 +55,61 @@ class TableManageUser extends Component {
         let arrUsers = this.state.usersRedux;
         return (
             <React.Fragment>
-                <div className="m-5 ">
-                    <div className="row">
-                        <div className="col-xs-12">
-                            <div className="table-responsive" data-pattern="priority-columns">
-                                <table className="table table-bordered table-hover">
-                                    <thead>
-                                        <tr className='table-success'>
-                                            <th >Email</th>
-                                            <th >Firstname</th>
-                                            <th >lastName</th>
-                                            <th >address</th>
-                                            <th >Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        {arrUsers && arrUsers.length > 0 &&
-                                            arrUsers && arrUsers.map((item, index) => {
-                                                // console.log('arrUsers', arrUsers) 
-                                                return (
-                                                    <tr key={index}>
-                                                        <td>{item.email}</td>
-                                                        <td>{item.firstName}</td>
-                                                        <td>{item.lastName}</td>
-                                                        <td>{item.address}</td>
-                                                        <td >
-                                                            <button
-                                                                onClick={() => this.handleEditUser(item)}
-                                                                className='edit'> <i className='fas fa-edit'></i></button>
-                                                            <button
-                                                                onClick={() => this.handleDeleteUser(item)}
-                                                                className='delete'> <i className='fas fa-user-slash'></i></button>
-                                                        </td>
-                                                    </tr>
+                <div className='bgr'>
 
 
-                                                )
-                                            })
-                                        }
-                                    </tbody>
-                                </table>
+                    <div className="m-5 ">
+                        <div className="row">
+                            <div className="col-xs-12">
+                                <div className="table-responsive" data-pattern="priority-columns">
+                                    <table className="table table-bordered table-hover">
+                                        <thead>
+                                            <tr className='table-color'>
+                                                <th >Email</th>
+                                                <th >Firstname</th>
+                                                <th >lastName</th>
+                                                <th >address</th>
+                                                <th >Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            {arrUsers && arrUsers.length > 0 &&
+                                                arrUsers && arrUsers.map((item, index) => {
+                                                    // console.log('arrUsers', arrUsers) 
+                                                    return (
+                                                        <tr key={index}>
+                                                            <td>{item.email}</td>
+                                                            <td>{item.firstName}</td>
+                                                            <td>{item.lastName}</td>
+                                                            <td>{item.address}</td>
+                                                            <td >
+                                                                <button
+                                                                    onClick={() => this.handleEditUser(item)}
+                                                                    className='edit'> <i className='fas fa-edit'></i></button>
+                                                                <button
+                                                                    onClick={() => this.handleDeleteUser(item)}
+                                                                    className='delete'> <i className='fas fa-user-slash'></i></button>
+                                                            </td>
+                                                        </tr>
+
+
+                                                    )
+                                                })
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+                    <div className='m-5'>
+                        {/* martdown editor */}
+                        <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
+                    </div>
+
                 </div>
-
-                <div className='m-5'>
-                    {/* martdown editor */}
-                    <MdEditor style={{ height: '500px' }} renderHTML={text => mdParser.render(text)} onChange={handleEditorChange} />
-                </div>
-
-
             </React.Fragment>
 
 

@@ -137,20 +137,21 @@ class HomeHeader extends Component {
                     </div >
 
                 </div>
-                <div className='home-header-banner'>
-                    {/* <div className='content'>
-                        <div className='option'>
-                            <div className='option-content'>
-                                <div className='icon-content'>
-                                    <i className="fas fa-hospital-alt"></i>
+                {this.props.isShowBanner === true &&
+                    < div className='home-header-banner'>
+                        <div className='content'>
+                            <div className='option'>
+                                <div className='option-content'>
+                                    <div className='icon-content'>
+                                        <i className="fas fa-hospital-alt"></i>
+                                    </div>
+                                    <div className='text-content'>Khám từ xa</div>
                                 </div>
-                                <div className='text-content'>Khám từ xa</div>
+
                             </div>
-
                         </div>
-                    </div> */}
-                </div>
-
+                    </div>
+                }
 
 
             </React.Fragment>

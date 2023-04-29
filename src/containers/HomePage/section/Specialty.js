@@ -12,7 +12,10 @@ import Session from 'redux-persist/lib/storage/session';
 import * as actions from '../../../store/actions'
 import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
+import { withRouter } from 'react-router'; // đường đi để truy xuất đến trang mới
+
 class Specialty extends Component {
+
     constructor(props) { //hàm tạo
         super(props)
         this.state = {
@@ -29,11 +32,16 @@ class Specialty extends Component {
         }
     }
 
+    // chuyển đến trang chi tiết bac sĩ
+    handleDetailDoctor = (doctor) => {
+        // console.log('Phuoc ưi', doctor)
+        this.props.history.push(`/detail-doctor/${doctor.id}`)
+    }
     componentDidMount() { // fire redux
         this.props.loadTopDoctors();
     }
     render() {
-        console.log('check', this.props.topDoctorsRedux)
+        // console.log('check', this.props.topDoctorsRedux)
         let arrDoctors = this.state.arrDoctors;
         let { language } = this.props
         return (
@@ -54,7 +62,7 @@ class Specialty extends Component {
                                     let nameVi = `${item.positionData.valueVi}, ${item.lastName} ${item.firstName} `;
                                     let nameEn = `${item.positionData.valueEn}, ${item.firstName} ${item.lastName}`;
                                     return (
-                                        < div className='img-slider' key={index} >
+                                        < div className='img-slider' key={index} onClick={() => this.handleDetailDoctor(item)} > {/* khi sử dụng handleDetailDoctor sẽ đến trang mới */}
                                             <a href='#'>
                                                 {/* <div className='img' > */}
                                                 {/* <div className='img' style={{ backgroundImage: `url(${imageBase64})` }}> </div> */}
@@ -143,4 +151,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Specialty);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Specialty));

@@ -1,3 +1,24 @@
+.bgr {
+    // background: url(../../../../src/assets/images/Banner-Kham-benh-hieu-qua-2048x693.jpg);
+    // opacity: 0.6;
+    // height: 100vh;
+    background: rgb(57, 226, 170);
+    // background: blue;
+}
+
+label {
+    font-size: 16px;
+}
+
+.titl {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 35px;
+    padding-top: 15px;
+    color: #0071ba;
+}
+
 .preview-img-container {
     display: flex;
     justify-content: flex-start;
