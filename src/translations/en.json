@@ -155,5 +155,11 @@
             "team of doctors": "team of doctors",
             "more-infor": "More information"
         }
+    },
+    "manage-schdule": {
+        "title": "Manage doctor's examination plan",
+        "Choose-doctor": "Choose doctor",
+        "Choose-Date": "Choose Date",
+        "Save": "Save"
     }
 }

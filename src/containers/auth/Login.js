@@ -71,7 +71,11 @@ class Login extends Component {
 
     }
 
-
+    handkeKeydown = (event) => {
+        if (event.key === 'Enter') {
+            this.handleLogin();
+        }
+    }
     render() {
         //jsx: viết javascipt ngay trong html
         return (
@@ -98,7 +102,9 @@ class Login extends Component {
                                     placeholder='Password'
                                     className='form-control'
                                     value={this.state.password}
-                                    onChange={(event) => this.handleOnChangePassword(event)} />
+                                    onChange={(event) => this.handleOnChangePassword(event)}
+                                    onKeyDown={(event) => this.handkeKeydown(event)} />
+
                                 <span onClick={() => { this.handleShowPass() }}>
                                     <i class={this.state.isShowPassword ? "fas fa-eye" : "fas fa-eye-slash"}></i>
                                 </span>

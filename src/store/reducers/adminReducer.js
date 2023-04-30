@@ -8,6 +8,7 @@ const initialState = {
     users: [],
     topDoctors: [], //tạo mảng rỗng cho bác sĩ top
     allDoctors: [],
+    allScheduleTime: [],
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -83,6 +84,18 @@ const adminReducer = (state = initialState, action) => {
 
         case actionTypes.FETCH_ALL_DOCTORS_FAIDED:
             state.allDoctors = [];
+            return {
+                ...state
+            }
+
+        case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_SUCCESS:
+            state.allScheduleTime = action.dataTime;
+            return {
+                ...state
+            }
+
+        case actionTypes.FETCH_ALLCODE_SCHEDULE_TIME_FAIDED:
+            state.allScheduleTime = [];
             return {
                 ...state
             }
