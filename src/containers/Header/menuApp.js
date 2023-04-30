@@ -23,6 +23,21 @@ export const adminMenu = [
                 name: 'menu.admin.crud', link: '/system/user-manage',
 
             },
+            {//quản lý kế hoạch khám bệnh
+                name: 'menu.doctor.manage-schedule',
+                menus: [
+                    {
+                        name: 'menu.doctor.schedule', link: '/system/user-doctor'
+
+                    },
+
+
+
+
+                ]
+            },
+
+
 
 
         ]
@@ -78,6 +93,23 @@ export const adminMenu = [
 
 
 
+        ]
+    }
+];
+export const doctorMenu = [
+    {
+        name: 'menu.admin.manage-user',
+        menus: [
+
+            {//quản lý kế hoạch khám bệnh
+                name: 'menu.doctor.manage-schedule',
+                menus: [
+                    {
+                        name: 'menu.doctor.schedule', link: '/system/user-manage'
+
+                    },
+                ]
+            },
         ]
     }
 ];

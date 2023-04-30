@@ -67,6 +67,9 @@
             "manage-branch": "Quản lý chi nhánh",
             "specialty": "Chuyên Khoa",
             "manage-specialty": "Quản lý chuyên Khoa"
+        },
+        "doctor": {
+            "manage-schedule": "Quản lý kế hoạch khám bệnh"
         }
     },
     "system": {
