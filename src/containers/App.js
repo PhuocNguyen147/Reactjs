@@ -14,10 +14,7 @@ import { CustomToastCloseButton } from '../components/CustomToast';
 import HomePage from './HomePage/HomePage.js'
 import CustomScrollbars from '../components/CustomScrollbars';
 import DetailDoctor from './Patient/Doctor/DetailDoctor';
-
-
 class App extends Component {
-
     handlePersistorState = () => {
         const { persistor } = this.props;
         let { bootstrapped } = persistor.getState();
@@ -31,11 +28,9 @@ class App extends Component {
             }
         }
     };
-
     componentDidMount() {
         this.handlePersistorState();
     }
-
     render() {
         return (
             <Fragment>

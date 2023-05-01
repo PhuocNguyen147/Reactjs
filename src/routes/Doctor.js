@@ -14,14 +14,11 @@ class Doctor extends Component {
                         <Switch>
                             {/* // router vs react */}
                             <Route path="/doctor/manage-schedule" component={ManageSchedule} />
-
                         </Switch>
                     </div>
                 </div>
             </React.Fragment>
-
         );
-
     }
 }
 
@@ -31,10 +28,8 @@ const mapStateToProps = state => {
         isLoggedIn: state.user.isLoggedIn
     };
 };
-
 const mapDispatchToProps = dispatch => {
     return {
     };
 };
-
 export default connect(mapStateToProps, mapDispatchToProps)(Doctor);
