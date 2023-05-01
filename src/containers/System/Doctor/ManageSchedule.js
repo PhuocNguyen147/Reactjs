@@ -137,6 +137,7 @@ class ManageSchedule extends Component {
             arrSchedule: result,
             doctorId: selectedDoctor.value,
             formatedDate: formatedDate
+
         })
         console.log('saveBulkScheduleDoctor:', res)
         console.log('result:', result)
