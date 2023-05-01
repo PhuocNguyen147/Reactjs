@@ -9,6 +9,7 @@ import DatePicker from '../../../components/Input/DatePicker';
 import moment from 'moment'; // check date
 import { toast } from 'react-toastify';
 import _ from 'lodash';
+import { saveBulkScheduleDoctor } from '../../../services/userService';
 class ManageSchedule extends Component {
     constructor(props) {
         super(props);
@@ -101,9 +102,9 @@ class ManageSchedule extends Component {
         }
     }
 
-    handleSaveSchedule = () => {
+    handleSaveSchedule = async () => {
         let { rangeTime, selectedDoctor, currentDate } = this.state;
-        let result = []
+        let result = [];
         if (!currentDate) {
             toast.error("Chưa chọn Ngày / Invalid date ")
             return;
@@ -112,15 +113,17 @@ class ManageSchedule extends Component {
             toast.error("Chưa chọn bác sĩ / Invalid selected doctor")
             return;
         }
-        let formatDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+        // let formatDate = moment(currentDate).format(dateFormat.SEND_TO_SERVER);
+        let formatedDate = new Date(currentDate).getTime()
+
         if (rangeTime && rangeTime.length > 0) {
             let selectedTime = rangeTime.filter(item => item.isSelected === true);
             if (selectedTime && selectedTime.length > 0) {
                 selectedTime.map(schedule => {
                     let object = {};
                     object.doctorId = selectedDoctor.value;
-                    object.date = formatDate;
-                    object.time = schedule.keyMap;
+                    object.date = formatedDate;
+                    object.timeType = schedule.keyMap;
                     result.push(object);
                 })
             } else {
@@ -129,6 +132,13 @@ class ManageSchedule extends Component {
             }
 
         }
+
+        let res = await saveBulkScheduleDoctor({
+            arrSchedule: result,
+            doctorId: selectedDoctor.value,
+            formatedDate: formatedDate
+        })
+        console.log('saveBulkScheduleDoctor:', res)
         console.log('result:', result)
     }
     render() {
