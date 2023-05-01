@@ -1,10 +1,10 @@
 .Doctor-schedule-container {
-    border-right: 1px solid red;
+    border-right: 1px solid rgb(44, 232, 197);
     height: 100%;
 
     .all-schedule {
         select {
-            padding: 10px 0;
+            padding: 10px 0 0 15px;
             border-bottom: 1px solid #909090;
             border-top: none;
             border-left: none;
@@ -41,30 +41,50 @@
 
 
         .time-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding-right: 320px;
+            .time-content-btns {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+                padding-right: 200px;
 
-            button {
-                padding: 9px 10px;
-                border: none;
-                outline: none;
-                background-color: rgb(96, 245, 191);
-                min-width: 120px;
-                border-radius: 6px;
-                font-weight: 600;
-                color: #333;
+                button {
+                    padding: 9px 10px;
+                    border: none;
+                    outline: none;
+                    background-color: rgb(96, 245, 191);
+                    min-width: 120px;
+                    border-radius: 6px;
+                    font-weight: 600;
+                    color: #333;
 
-                &:hover {
-                    background-color: #0cea61;
-                    color: white;
+                    &:hover {
+                        background-color: #0cea61;
+                        color: white;
+                    }
+                }
+
+                .btn-vi {
+                    min-width: 120px;
+                }
+
+                .btn-en {
+                    min-width: 170px;
                 }
             }
 
-            .fon {
-                font-size: 15px;
 
+            .fon {
+                font-size: 14px;
+                font-style: italic;
+
+
+            }
+
+
+
+            .book-free {
+                font-size: 15px;
+                padding-top: 15px;
             }
         }
     }

@@ -161,5 +161,13 @@
         "Choose-doctor": "Choose doctor",
         "Choose-Date": "Choose Date",
         "Save": "Save"
+    },
+    "patient": {
+        "detail-doctor": {
+            "schedule": "Schedule",
+            "non-schdule": "Doctor has no appointment today, please choose another date!",
+            "choose": "Book an appointment for free",
+            "book-free": "according to the above time"
+        }
     }
 }

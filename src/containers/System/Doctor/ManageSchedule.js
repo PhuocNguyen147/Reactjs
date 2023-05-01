@@ -139,11 +139,18 @@ class ManageSchedule extends Component {
             formatedDate: formatedDate
 
         })
-        console.log('saveBulkScheduleDoctor:', res)
-        console.log('result:', result)
+
+        if (res && res.errCode === 0) {
+            toast.success('Đặt lịch thành công! / Save infor success!')
+        } else {
+            toast.error('Lỗi đặt lịch! / error save schedule!')
+            console.log('saveBulkScheduleDoctor error:', res)
+        }
+        // console.log('saveBulkScheduleDoctor:', res)
+        // console.log('result:', result)
     }
     render() {
-
+        let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
         let { rangeTime } = this.state;
         let { language } = this.props;
         // console.log('check state doctor', rangeTime)
@@ -178,7 +185,7 @@ class ManageSchedule extends Component {
                                 onChange={this.handleOnchangeDatePicker}
                                 className='form-control'
                                 value={this.state.currentDate}
-                                minDate={new Date()}
+                                minDate={yesterday}
                             >
 
                             </DatePicker>
