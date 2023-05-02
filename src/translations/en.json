@@ -176,7 +176,12 @@
             "selecte-doctor": "Choose a doctor",
             "intro": "Doctor intro",
             "crateinfo": "Create infor",
-            "save": "Save infor"
+            "save": "Save infor",
+            "price": "Select price",
+            "pay": "Select Payment Method",
+            "province": "Select a province",
+            "nameClinic": "Select clinic name",
+            "address": "Select clinic address"
         }
     }
 }

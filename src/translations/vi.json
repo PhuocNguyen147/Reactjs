@@ -176,7 +176,12 @@
             "selecte-doctor": "Chọn Bác sĩ",
             "intro": "Phần giới thiệu bác sĩ",
             "crateinfo": "Tạo thông tin",
-            "save": "Lưu thông tin"
+            "save": "Lưu thông tin",
+            "price": "Chọn giá",
+            "pay": "Chọn Phương thức thanh toán",
+            "province": "Chọn tỉnh thành",
+            "nameClinic": "Chọn tên phòng khám",
+            "address": "Chọn địa chỉ phòng khám"
         }
     }
 }
