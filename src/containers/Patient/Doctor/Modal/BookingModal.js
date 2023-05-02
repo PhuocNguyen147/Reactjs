@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { Modal } from 'reactstrap';
-
 import './BookingModal.scss'
-
+import _ from 'lodash';
+import ProfileDoctor from '../ProfileDoctor';
 import { FormattedMessage } from 'react-intl';
 import { classNames } from 'react-select/dist/index-ea9e225d.cjs.prod';
 class BookingModal extends Component {
@@ -36,6 +36,13 @@ class BookingModal extends Component {
     render() {
 
         let { isOpenModal, closeBookingClose, dataTime } = this.props;
+        let doctorId = '';
+        if (dataTime && !_.isEmpty(dataTime)) {
+            doctorId = dataTime.doctorId
+        }
+
+        console.log('data props', this.props)
+
         return (
             <>
                 <Modal
@@ -56,10 +63,10 @@ class BookingModal extends Component {
                         </div>
                         <div className='booking-modal-body'>
                             <div className='doctor-infor'>
+                                <ProfileDoctor
 
-                            </div>
-                            <div className='price' >
-                                Giá khám 500.000VND
+                                    doctorId={doctorId}
+                                ></ProfileDoctor>
                             </div>
                             <div className='row'>
                                 <div className='col-6 form-group'>
