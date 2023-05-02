@@ -29,7 +29,9 @@ class DoctorExtraInfor extends Component {
     }
 
     showHideDetailInfor = (status) => {
-
+        this.setState({
+            isShowDetailInfor: status
+        })
     }
     render() {
         let { isShowDetailInfor } = this.state
@@ -46,19 +48,30 @@ class DoctorExtraInfor extends Component {
                     </div>
                     <div className='content-down'>
                         {isShowDetailInfor === false &&
-                            <div>
-                                GIÁ KHÁM:250.000đ .Xem chi tiết
+                            <div className='short-infor'>
+                                GIÁ KHÁM: 300.000đ  <span onClick={() => this.showHideDetailInfor(true)}>  Xem chi tiết</span>
                             </div>
 
                         }
                         {isShowDetailInfor === true &&
                             <>
-                                <div>GIÁ KHÁM: .</div>
-                                <div>Giá khám
-                                    Được ưu tiên khám trước khi đật khám qua BookingCare. Giá khám cho người nước ngoài là 30 USD
-                                    300.000đ</div>
-                                <div>Người bệnh có thể thanh toán chi phí bằng hình thức tiền mặt và quẹt thẻ</div>
-                                <div>Ẩn bảng Giá</div>
+                                <div className='title-price'>
+                                    GIÁ KHÁM:
+                                </div>
+                                <div className='detail-infor'>
+                                    <div className='price'>
+                                        <span className='left' >Giá khám</span>
+                                        <span className='right'>300.000</span>
+                                    </div>
+
+                                    <div className='note' >
+                                        Được ưu tiên khám trước khi đật khám qua BookingCare. Giá khám cho người nước ngoài là 30 USD
+                                    </div>
+
+
+                                </div>
+                                <div className='payment'>Người bệnh có thể thanh toán chi phí bằng hình thức tiền mặt và quẹt thẻ</div>
+                                <div className='hide-price'><span onClick={() => this.showHideDetailInfor(false)}>Ẩn bảng Giá</span></div>
                             </>
                         }
 
