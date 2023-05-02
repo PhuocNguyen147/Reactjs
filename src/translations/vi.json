@@ -168,6 +168,13 @@
             "non-schdule": "Bác sĩ không có lịch khám hôm nay, vui lòng chọn ngày khác!",
             "choose": "Đặt lịch khám",
             "book-free": "miễn phí theo khung giờ"
+        },
+        "extra-info-doctor": {
+            "text-address": "Địa chỉ khám",
+            "price": "Giá khám ",
+            "detail": "Xem chi tiết",
+            "payment": "Khách hàng có thể thanh toán chi phí bằng hình thức:  ",
+            "hide-price": "Ẩn bảng giá"
         }
     },
     "admin": {

@@ -37,7 +37,7 @@ class DetailDoctor extends Component {
     }
     render() {
         // console.log(this.props.match.params.id)
-        console.log('state', this.state)
+        // console.log('state', this.state)
         let { language } = this.props;
         let nameEn = '', nameVi = ''
         let { detailDoctor } = this.state;
@@ -77,8 +77,9 @@ class DetailDoctor extends Component {
                             ></DoctorSchedule>
                         </div>
                         <div className='content-right'>
-                            <DoctorExtraInfor>
-                                doctorIdFromParent={this.state.currentDoctorId}
+                            <DoctorExtraInfor
+                                doctorIdFromParent={this.state.currentDoctorId}>
+
                             </DoctorExtraInfor>
                         </div>
                     </div>

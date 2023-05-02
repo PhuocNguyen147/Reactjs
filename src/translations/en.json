@@ -168,6 +168,13 @@
             "non-schdule": "Doctor has no appointment today, please choose another date!",
             "choose": "Book an appointment for free",
             "book-free": "according to the above time"
+        },
+        "extra-info-doctor": {
+            "text-address": "Exam address",
+            "price": "price of examination",
+            "detail": "View details",
+            "payment": "Customers can pay expenses in the form: ",
+            "hide-price": "Hide price list"
         }
     },
     "admin": {
