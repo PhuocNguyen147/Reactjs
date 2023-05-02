@@ -6,6 +6,8 @@ import { LANGUAGES } from '../../../utils';
 import { FormattedMessage } from 'react-intl';
 import { getProfileDoctorById } from '../../../services/userService'
 import NumberFormat from 'react-number-format';
+import moment from 'moment';
+import _ from 'lodash';
 class ProfileDoctor extends Component {
     constructor(props) {
         super(props);
@@ -41,22 +43,38 @@ class ProfileDoctor extends Component {
         if (this.props.doctorId !== prevProps.doctorId) {
             // this.getInforDoctor(this.props.doctorId)
         }
+    }
+    renderTimeBooking = (dataTime) => {
+        let { language } = this.props
 
+        if (dataTime && !_.isEmpty(dataTime)) {
+            let time = language === LANGUAGES.VI ? dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn;
+            let date = language === LANGUAGES.VI ?
+                moment.unix(+dataTime.date / 1000).format('dddd - DD/MM/YYYY') // convert từ chuỗi tring của thời gian sang đúng chuẩn time
+                :
+                moment.unix(+dataTime.date / 1000).locale('en').format('ddd - MM/DD/YYYY')
+            return (
+                <>
+                    <div>{time} - {date}</div>
+                    <div>Mien phi dat lich</div>
 
+                </>
+            )
+        }
+        return <></>
 
     }
 
-
     render() {
         let { dataProfile } = this.state
-        let { language } = this.props
+        let { language, isShowDescriptionDoctor, dataTime } = this.props
         let nameEn = '', nameVi = ''
 
         if (dataProfile && dataProfile.positionData) {
             nameVi = `${dataProfile.positionData.valueVi}, ${dataProfile.lastName} ${dataProfile.firstName} `;
             nameEn = `${dataProfile.positionData.valueEn}, ${dataProfile.firstName} ${dataProfile.lastName}`;
         }
-        console.log('chek', this.state)
+        console.log('chek', this.props)
         return (
 
             <>
@@ -71,11 +89,20 @@ class ProfileDoctor extends Component {
                                 {language === LANGUAGES.VI ? nameVi : nameEn}
                             </div>
                             <div className='down'>
-                                {dataProfile && dataProfile.Markdown && dataProfile.Markdown.description &&
-                                    <span>
-                                        {dataProfile.Markdown.description}
-                                    </span>
+                                {isShowDescriptionDoctor === true ?
+                                    <>
+                                        {dataProfile && dataProfile.Markdown && dataProfile.Markdown.description &&
+                                            <span>
+                                                {dataProfile.Markdown.description}
+                                            </span>
+                                        }
+                                    </>
+                                    :
+                                    <>
+                                        {this.renderTimeBooking(dataTime)}
+                                    </>
                                 }
+
                             </div>
                         </div>
 
