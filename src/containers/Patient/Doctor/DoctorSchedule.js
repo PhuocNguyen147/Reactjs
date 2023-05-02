@@ -8,12 +8,14 @@ import moment from 'moment';
 import localization from 'moment/locale/vi';
 import { getScheduleByDate } from '../../../services/userService'
 import { FormattedMessage } from 'react-intl';
+import BookingModal from './Modal/BookingModal';
 class DoctorSchedule extends Component {
     constructor(props) {
         super(props);
         this.state = {
             allDays: '',
             allAvalableTime: [],
+
 
         }
     }
@@ -160,7 +162,7 @@ class DoctorSchedule extends Component {
                     </div>
                 </div>
 
-
+                <BookingModal></BookingModal>
             </>
         );
 
