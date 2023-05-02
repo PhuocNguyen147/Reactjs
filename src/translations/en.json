@@ -169,5 +169,14 @@
             "choose": "Book an appointment for free",
             "book-free": "according to the above time"
         }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "Create doctor information",
+            "selecte-doctor": "Choose a doctor",
+            "intro": "Doctor intro",
+            "crateinfo": "Create infor",
+            "save": "Save infor"
+        }
     }
 }

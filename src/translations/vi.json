@@ -169,5 +169,14 @@
             "choose": "Đặt lịch khám",
             "book-free": "miễn phí theo khung giờ"
         }
+    },
+    "admin": {
+        "manage-doctor": {
+            "title": "TẠO THÔNG TIN BÁC SĨ",
+            "selecte-doctor": "Chọn Bác sĩ",
+            "intro": "Phần giới thiệu bác sĩ",
+            "crateinfo": "Tạo thông tin",
+            "save": "Lưu thông tin"
+        }
     }
 }

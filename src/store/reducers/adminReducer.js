@@ -9,6 +9,7 @@ const initialState = {
     topDoctors: [], //tạo mảng rỗng cho bác sĩ top
     allDoctors: [],
     allScheduleTime: [],
+    allRequireDoctorInfor: [],
 }
 
 const adminReducer = (state = initialState, action) => {
@@ -99,6 +100,22 @@ const adminReducer = (state = initialState, action) => {
             return {
                 ...state
             }
+        case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_SUCCESS: // load dong phan payment
+            state.allRequireDoctorInfor = action.data;
+            // console.log("require data ", action)
+            return {
+                ...state
+            }
+
+        case actionTypes.FETCH_REQUIRED_DOCTOR_INFOR_FAIDED:
+            state.allRequireDoctorInfor = [];
+            return {
+                ...state
+            }
+
+
+
+
         default:
             return state;
 
