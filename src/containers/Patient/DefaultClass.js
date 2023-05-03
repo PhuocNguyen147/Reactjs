@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import HomeHeader from '../../HomePage/HomeHeader';
+
 // import './DefaultClass.scss'
 
 import { FormattedMessage } from 'react-intl';
