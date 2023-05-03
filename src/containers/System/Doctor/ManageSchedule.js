@@ -82,7 +82,7 @@ class ManageSchedule extends Component {
     };
 
 
-    handleOnchangeDatePicker = (date) => {
+    handleOnchangeDatePicker = (date) => {  // nhận biết khi thay đổi ngày-> lịch cũng thay đổi ngày theo
         this.setState({
             currentDate: date[0]
         })

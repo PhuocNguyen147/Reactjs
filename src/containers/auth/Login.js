@@ -25,7 +25,7 @@ class Login extends Component {
         this.setState({
             username: event.target.value
         })
-        console.log(event.target.value)
+        // console.log(event.target.value)
     }
     handleOnChangePassword = (event) => { // bat event, state cho từng sự kiện, mỗi tài khoản
         this.setState({

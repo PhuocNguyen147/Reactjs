@@ -11,6 +11,25 @@
     }
 
     .manage-patient-body {
-        padding: 0 150px;
+        // padding: 0 150px;
+
+        .choose {
+
+            display: flex;
+            margin-bottom: 15px;
+
+            label {
+                font-size: 20px;
+                font-weight: 600;
+                margin-right: 12px;
+            }
+
+            .day {
+                margin-left: 12px;
+            }
+        }
+
+
+
     }
 }
