@@ -69,7 +69,8 @@
             "manage-specialty": "Quản lý chuyên Khoa"
         },
         "doctor": {
-            "manage-schedule": "Quản lý kế hoạch khám bệnh"
+            "manage-schedule": "Quản lý kế hoạch khám bệnh",
+            "manage-patient": "Danh sách bệnh nhân đặt lịch"
         }
     },
     "system": {

@@ -69,7 +69,8 @@
             "manage-specialty": "manage specialty"
         },
         "doctor": {
-            "manage-schedule": "Manage Doctor's schedule"
+            "manage-schedule": "Manage Doctor's schedule",
+            "manage-patient": "List of patients booked"
         }
     },
     "system": {
