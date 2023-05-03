@@ -175,6 +175,20 @@
             "detail": "View details",
             "payment": "Customers can pay expenses in the form: ",
             "hide-price": "Hide price list"
+        },
+        "booking-modal": {
+            "title": "Information to book a medical appointment",
+            "name": "First and last name: ",
+            "phone": "Phone number: ",
+            "email": "Email address: ",
+            "address": "Contact address: ",
+            "reason": "Reason for medical examination: ",
+            "birth": "Date of birth: ",
+            "gender": "Gender",
+            "free": "Free booking",
+            "price": "price of medical: ",
+            "confirm": "Confirm",
+            "cancel": "Cancel"
         }
     },
     "admin": {

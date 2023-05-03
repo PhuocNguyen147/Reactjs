@@ -56,7 +56,7 @@ class ProfileDoctor extends Component {
             return (
                 <>
                     <div>{time} - {date}</div>
-                    <div>Mien phi dat lich</div>
+                    <div><FormattedMessage id='patient.booking-modal.free'></FormattedMessage></div>
 
                 </>
             )
@@ -108,7 +108,7 @@ class ProfileDoctor extends Component {
 
 
                     </div>
-                    <div className='price'> giá khám:
+                    <div className='price'> <FormattedMessage id='patient.booking-modal.price'></FormattedMessage>:
                         {dataProfile && dataProfile.Doctor_infor && language === LANGUAGES.VI &&
                             <NumberFormat className='currency'
                                 value={dataProfile.Doctor_infor.priceTypeData.valueVi}
@@ -145,6 +145,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+
     };
 };
 
