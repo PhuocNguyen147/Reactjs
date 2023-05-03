@@ -6,13 +6,16 @@ import _ from 'lodash';
 import Toast from 'reactstrap';
 import ProfileDoctor from '../ProfileDoctor';
 import { FormattedMessage } from 'react-intl';
-import { classNames } from 'react-select/dist/index-ea9e225d.cjs.prod';
+// import { classNames } from 'react-select/dist/index-ea9e225d.cjs.prod';
 import DatePicker from '../../../../components/Input/DatePicker';
 import Select from 'react-select';
 import *  as actions from '../../../../store/actions'
 import { LANGUAGES } from '../../../../utils';
 import { postBookAppointment } from '../../../../services/userService'
 import { toast } from 'react-toastify';
+
+import moment from 'moment';
+
 class BookingModal extends Component {
     constructor(props) {
         super(props);
@@ -95,8 +98,13 @@ class BookingModal extends Component {
         });
 
     }
+
+
+    //gửi cho server thông tin bệnh nhân
     handleConfirmBooking = async () => {
         let date = new Date(this.state.birthday).getTime();
+        let timeString = this.buildTimeBooking(this.props.dataTime);
+        let doctorName = this.buildDoctorName(this.props.dataTime);
         let res = await postBookAppointment({
             fullName: this.state.fullName,
             phoneNumber: this.state.phoneNumber,
@@ -108,6 +116,9 @@ class BookingModal extends Component {
             doctorId: this.state.doctorId,
             genders: this.state.genders,
             timeType: this.state.timeType,
+            language: this.props.language,
+            timeString: timeString,
+            doctorName: doctorName
         })
         if (res && res.errCode === 0) {
             toast.success('Đặt lịch thành công! / Booking a new appointent success!')
@@ -116,6 +127,40 @@ class BookingModal extends Component {
             toast.error('Đặt lịch không thành công! / Booking a new appointent error!')
         }
         // console.log('submut', this.state)
+    }
+
+
+    buildTimeBooking = (dataTime) => {
+        let { language } = this.props
+
+        if (dataTime && !_.isEmpty(dataTime)) {
+            let time = language === LANGUAGES.VI ? dataTime.timeTypeData.valueVi : dataTime.timeTypeData.valueEn;
+            let date = language === LANGUAGES.VI ?
+                moment.unix(+dataTime.date / 1000).format('dddd - DD/MM/YYYY') // convert từ chuỗi tring của thời gian sang đúng chuẩn time
+                :
+                moment.unix(+dataTime.date / 1000).locale('en').format('ddd - MM/DD/YYYY')
+            return `${time} - ${date}`
+
+        }
+        return ''
+
+    }
+
+    buildDoctorName = (dataTime) => {
+        let { language } = this.props
+
+        if (dataTime && !_.isEmpty(dataTime)) {
+            // console.log('chech>>>>>>>>>>>langyuage', name)
+            let name = language === LANGUAGES.VI ?
+                `${dataTime.doctorData.lastName} ${dataTime.doctorData.firstName}`
+                :
+                `${dataTime.doctorData.firstName} ${dataTime.doctorData.lastName}`
+
+            return name;
+
+        }
+        return ''
+
     }
 
     render() {
