@@ -5,12 +5,16 @@ import './ManagePatient.scss'
 import { getListPatient } from '../../../services/userService'
 import { FormattedMessage } from 'react-intl';
 import moment from 'moment';
+import { LANGUAGES } from '../../../utils';
+import RemedyModal from './RemedyModal';
 class ManagePatient extends Component {
     constructor(props) {
         super(props);
         this.state = {
             currentDate: moment(new Date()).startOf('day').valueOf(), // today
-            dataPatient: []
+            dataPatient: [],
+            isOpenRemedyModal: false,
+            dataModal: {}
         }
     }
 
@@ -52,16 +56,24 @@ class ManagePatient extends Component {
             this.getDataPatient(user, formatedDate)
         })
     }
-    handleBtnConfirm = () => {
-        alert('Đã xác nhận')
+    handleBtnConfirm = (item) => {
+        let data = {
+            doctorId: item.doctorId,
+            patientId: item.patientId,
+            email: item.patientData.email
+        }
+        this.setState({
+            isOpenRemedyModal: true,
+            dataModal: data
+        })
+        console.log('data', data)
     }
-    handleBtnRemedy = () => {
 
-    }
     render() {
 
         console.log('chek', this.state)
-        let { dataPatient } = this.state
+        let { dataPatient, isOpenRemedyModal, dataModal } = this.state
+        let { language } = this.props
         return (
 
             <>
@@ -72,7 +84,7 @@ class ManagePatient extends Component {
                     <div className='manage-patient-body row '>
                         <div className='choose'>
                             <label >Chọn ngày khám</label>
-                            <div className='col-1 form-group '>
+                            <div className='col-1 form-group day'>
 
                                 <DatePicker
                                     onChange={this.handleOnchangeDatePicker}
@@ -101,25 +113,24 @@ class ManagePatient extends Component {
 
                                     {dataPatient && dataPatient.length > 0 ?
                                         dataPatient.map((item, index) => {
+                                            let time = language === LANGUAGES.VI ?
+                                                item.timeTypeDataPatient.valueVi : item.timeTypeDataPatient.valueEn;
+                                            let gender = language === LANGUAGES.VI ?
+                                                item.patientData.genderData.valueVi : item.patientData.genderData.valueEn
                                             return (
-
                                                 <tr key={index}>
                                                     <th scope="row">{index + 1}</th>
-                                                    <td>{item.timeTypeDataPatient.valueVi}</td>
+                                                    <td>{time}</td>
                                                     <td>{item.patientData.firstName}</td>
                                                     <td>{item.patientData.address}</td>
-                                                    <td>{item.patientData.genderData.valueVi}</td>
+                                                    <td>{gender}</td>
                                                     <td>
                                                         <button className=' btn-success '
-                                                            onClick={() => this.handleBtnConfirm()}
+                                                            onClick={() => this.handleBtnConfirm(item)}
                                                         >
                                                             Xác nhận
                                                         </button>
-                                                        <button className='btn-primary mx-4'
-                                                            onClick={() => this.handleBtnRemedy()}
-                                                        >
-                                                            gửi hóa đơn
-                                                        </button>
+
                                                     </td>
                                                 </tr>
 
@@ -135,6 +146,13 @@ class ManagePatient extends Component {
                         </div>
                     </div>
                 </div>
+
+                <RemedyModal
+                    isOpenModal={isOpenRemedyModal}
+                    dataModal={dataModal}
+                >
+
+                </RemedyModal>
             </>
         );
 
