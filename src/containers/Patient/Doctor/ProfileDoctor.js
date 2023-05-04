@@ -8,6 +8,7 @@ import { getProfileDoctorById } from '../../../services/userService'
 import NumberFormat from 'react-number-format';
 import moment from 'moment';
 import _ from 'lodash';
+import LoadingOverlay from 'react-loading-overlay'
 class ProfileDoctor extends Component {
     constructor(props) {
         super(props);
@@ -78,58 +79,63 @@ class ProfileDoctor extends Component {
         return (
 
             <>
-                <div className='profile-doctor-container'>
-                    <div className='intro-doctor'>
-                        <div className='content-left'
-                            style={{ backgroundImage: `url(${dataProfile && dataProfile.image ? dataProfile.image : ''})` }}>
+                <LoadingOverlay
+                    active={false}
+                    spinner
+                    text='Sending....email....'
+                >
+                    <div className='profile-doctor-container'>
+                        <div className='intro-doctor'>
+                            <div className='content-left'
+                                style={{ backgroundImage: `url(${dataProfile && dataProfile.image ? dataProfile.image : ''})` }}>
+
+                            </div>
+                            <div className='content-right'>
+                                <div className='up'>
+                                    {language === LANGUAGES.VI ? nameVi : nameEn}
+                                </div>
+                                <div className='down'>
+                                    {isShowDescriptionDoctor === true ?
+                                        <>
+                                            {dataProfile && dataProfile.Markdown && dataProfile.Markdown.description &&
+                                                <span>
+                                                    {dataProfile.Markdown.description}
+                                                </span>
+                                            }
+                                        </>
+                                        :
+                                        <>
+                                            {this.renderTimeBooking(dataTime)}
+                                        </>
+                                    }
+
+                                </div>
+                            </div>
+
 
                         </div>
-                        <div className='content-right'>
-                            <div className='up'>
-                                {language === LANGUAGES.VI ? nameVi : nameEn}
-                            </div>
-                            <div className='down'>
-                                {isShowDescriptionDoctor === true ?
-                                    <>
-                                        {dataProfile && dataProfile.Markdown && dataProfile.Markdown.description &&
-                                            <span>
-                                                {dataProfile.Markdown.description}
-                                            </span>
-                                        }
-                                    </>
-                                    :
-                                    <>
-                                        {this.renderTimeBooking(dataTime)}
-                                    </>
-                                }
+                        <div className='price'> <FormattedMessage id='patient.booking-modal.price'></FormattedMessage>:
+                            {dataProfile && dataProfile.Doctor_infor && language === LANGUAGES.VI &&
+                                <NumberFormat className='currency'
+                                    value={dataProfile.Doctor_infor.priceTypeData.valueVi}
+                                    displayType={'text'}
+                                    thousandSeparator={true} suffix={'VND'}
+                                ></NumberFormat>
+                            }
+                            {dataProfile && dataProfile.Doctor_infor && language === LANGUAGES.EN &&
+                                <NumberFormat className='currency'
+                                    value={dataProfile.Doctor_infor.priceTypeData.valueEn}
+                                    displayType={'text'}
+                                    thousandSeparator={true} suffix={'$'}
+                                ></NumberFormat>
+                            }
 
-                            </div>
+
                         </div>
 
 
                     </div>
-                    <div className='price'> <FormattedMessage id='patient.booking-modal.price'></FormattedMessage>:
-                        {dataProfile && dataProfile.Doctor_infor && language === LANGUAGES.VI &&
-                            <NumberFormat className='currency'
-                                value={dataProfile.Doctor_infor.priceTypeData.valueVi}
-                                displayType={'text'}
-                                thousandSeparator={true} suffix={'VND'}
-                            ></NumberFormat>
-                        }
-                        {dataProfile && dataProfile.Doctor_infor && language === LANGUAGES.EN &&
-                            <NumberFormat className='currency'
-                                value={dataProfile.Doctor_infor.priceTypeData.valueEn}
-                                displayType={'text'}
-                                thousandSeparator={true} suffix={'$'}
-                            ></NumberFormat>
-                        }
-
-
-                    </div>
-
-
-                </div>
-
+                </LoadingOverlay>
 
             </>
         );
